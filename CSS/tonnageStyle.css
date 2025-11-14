@@ -1,0 +1,94 @@
+/* Grid Formatting */
+.grid-form{
+    display: grid; 
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-rows: repeat(6, auto);
+    width: 90%;
+    gap: 1em;
+}
+/* Grid Layout  */
+.grid-top-left{
+    grid-column: 1/span 1;
+}
+.grid-top-title{
+    grid-column: 2/span 2;
+    justify-content: space-around;
+}
+.grid-left-title{
+    grid-column: 1/span 1;
+    grid-row: 2/span 3;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.5em;
+    flex: 0;
+
+}
+.grid-main-field{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3,1fr);   
+    grid-column: 2/span 2;
+    grid-row: 2/span 3;
+    column-gap: 1em;
+    row-gap: 0.5em;
+    padding: 1em;
+}
+.grid-item-button-area{
+    grid-column: 1/span 3;
+    grid-row: 6/span 1;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+}
+/* Grid Styling */
+.grid-draft{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.grid-bottom-content{
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+.grid-result-row{
+    border: 3px solid red;
+    grid-column: 1/span 3;
+    grid-row: 5/span 1;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
+    gap: 1em;
+}
+.tonTG-TPI{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+}
+.draft-tons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.max-tonnage{
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+}
+.tonTG{
+    flex-direction: column;
+    justify-content: center;
+
+}
+.tpi{
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+
+
+

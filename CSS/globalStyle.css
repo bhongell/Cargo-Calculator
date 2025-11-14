@@ -1,0 +1,97 @@
+/*global*/
+body{
+    padding: 5%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    background-color: rgb(216, 216, 216);
+}
+input{
+    font-size: inherit;
+    font-weight: 350;
+    color:black
+}
+h1{
+    font-size: 2.5em;
+    text-align: center;
+    color: blue;
+}
+h2{
+    border: 1px solid blue;
+    font-size: 2em;
+    text-align: center;
+}
+p{
+    padding: 0;
+    margin: 0 0.2em 0.2em 0.2em;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: lightskyblue;
+    box-shadow: 0 0 0.5em 1em lightskyblue;
+}
+.highlight{
+    background-color: white;
+    box-shadow: 0em 0em 10px 0.3em lightslategray;
+    border-radius: 20px;
+    padding: 0.5em  0.5em 0.5em 0.5em;
+}
+.calculate-button, .calculate-tonnage-button, .reset-button, .reset-tonnage-button{
+    width: 6em;
+    height: 2em;
+    text-align: center;
+    margin: 0;
+}
+.reset-button, .reset-tonnage-button{
+    background-color: red;
+}
+.tons, .result, .ftin, .result-tpi, .max-tons, .result-tons-max, .result-current-draft, .input-field-ft, .input-field-in, .input-field-salinity, .input-tons{
+  width: 6em;
+  height: 1.2em;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 0;
+  padding-right: 0.3em;
+  font: inherit;         
+  line-height: 1.5em;
+  vertical-align: middle;
+  text-align: right;
+  text-justify: center;
+  background-color: white;
+}
+.input-field-ft, .input-field-in, .input-field-salinity{
+    width: 2.5em;
+    margin: 0 0.2em;
+}
+.input-field-salinity{
+    width: 4em;
+}
+
+.ftin{
+    width: 2.5em;
+    box-sizing: border-box;
+}
+.grid-item, .grid-item-results{
+    border: 1px dashed red;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.3em;
+    justify-content: center;
+    align-items: center;
+}
+.grid-item-results{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.inline-ftin{
+    display: flex;
+    margin: 0 0.1em;
+}

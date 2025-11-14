@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+        <link rel="stylesheet" href="globalStyle.css">
+       <link rel="stylesheet" href="draftStyle.css">
+</head>
+        <div id="draft-container" class="container">
+            <form class="form">
+                <div id="top-input" class="top-input highlight"> <!--Top Input-->
+                    <div class="inline">
+                        <label>Observed Salinity:</label>
+                        <span><input type="text" id="salinity" class="input-field-salinity" inputmode="numeric" pattern="[0-9*]" placeholder="1.015" min="1.000" max="1.025" step="0.001">Relative Density</span>
+                    </div>
+                    <br>
+                    <div class="inline">
+                        <label>Fresh Water Allowance:</label>
+                        <span class="inline-fwa">
+                            <input type="text" id="fwa-ft" class="input-field-ft" min="0" value="">
+                            <p>Ft</p>
+                            <input type="text" id="fwa-in" class="input-field-in" min="0" max="11" value="">
+                            <p>-</p>
+                            <input type="text" id="fwa-in-num" class="input-field-in" min="0" max="64" value="">
+                            <p>/</p>
+                            <input type="text" id="fwa-in-den" class="input-field-in" min="0" max="64" value="">
+                            <p>In</p>
+                        </span>
+                    </div>
+                </div><!--Top Input End-->
+                <div class="middle-input highlight"><!--middle input-->
+                    <div class="grid">
+                        <div class="grid-item"></div>
+                        <div class="grid-item grid-title">PORT</div>
+                        <div class="grid-item grid-title">STBD</div>
+                        <div class="grid-item grid-title">FWD</div>
+                        <div class="grid-item">
+                            <div class="inline">
+                                <div class="inline-ftin"><input type="text" class="ftin" id="port-fwd-ft" min="0" value=""><p>Ft</p></div>
+                                <div class="inline-ftin"><input type="text" class="ftin" id="port-fwd-in" min="0" max="11" value=""><p>In</p></div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="inline">
+                                <div class="inline-ftin"><input type="text" class="ftin" id="stbd-fwd-ft" min="0" value=""><p>Ft</p></div>
+                                <div class="inline-ftin"><input type="text" class="ftin" id="stbd-fwd-in" min="0" max="11" value=""><p>In</p></div>
+                            </div>
+                        </div>
+                        <div class="grid-item">AFT</div>
+                        <div class="grid-item">
+                            <div class="inline">
+                                <div class="inline-ftin"><input type="text" class="ftin" id="port-aft-ft" min="0" value=""><p>Ft</p></div>
+                                <div class="inline-ftin"><input type="text" class="ftin" id="port-aft-in" min="0" max="11" value=""><p>In</p></div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="inline">
+                                <div class="inline-ftin"><input type="text" class="ftin" id="stbd-aft-ft" min="0" value=""><p>Ft</p></div>
+                                <div class="inline-ftin"><input type="text" class="ftin" id="stbd-aft-in" min="0" max="11" value=""><p>In</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--middle input end-->
+                <div class="bottom-area"><!--bottom area-->
+                    <div class="bottom-calcs highlight"><!--bottom calcs-->
+                            <div class="inline">
+                                <div class="title"><p>Mean Draft:</p></div>
+                                <div class="result" id="mean-draft"></div>
+                            </div>
+                            <div class="inline">
+                                <div class="title"><p>Trim:</p></div>
+                                <div class="result" id="trim"></div>
+                            </div>
+                            <div class="inline">
+                                <div class="title"><p>DWA:</p></div>
+                                <div class="result" id="dwa"></div>
+                            </div>
+                            <div class="inline">
+                                <div class="title"><p>SWD:</p></div>
+                                <div class="result" id="swd"></div>
+                            </div>
+                    </div><!--bottom calcs end-->
+                    <div class="button-area highlight"><!--Button area-->
+                        <button id="calculate" class="calculate-button" type="button">Calculate</button>
+                        <button id="reset" class="reset-button" type="button" onclick="resetFields()">Reset</button>
+                    </div><!--Button area end-->
+                </div><!--bottom area end-->
+            </form>
+        </div>
+        <script>
+            function resetFields(){
+                document.getElementById('port-fwd-ft').value = document.getElementById('port-fwd-ft').defaultValue;
+                document.getElementById('port-fwd-in').value = document.getElementById('port-fwd-in').defaultValue;
+                document.getElementById('port-aft-ft').value = document.getElementById('port-fwd-ft').defaultValue;
+                document.getElementById('port-aft-in').value = document.getElementById('port-fwd-in').defaultValue;
+                document.getElementById('stbd-fwd-ft').value = document.getElementById('stbd-fwd-ft').defaultValue;
+                document.getElementById('stbd-fwd-in').value = document.getElementById('stbd-fwd-in').defaultValue;
+                document.getElementById('stbd-aft-ft').value = document.getElementById('stbd-aft-ft').defaultValue;
+                document.getElementById('stbd-aft-in').value = document.getElementById('stbd-aft-in').defaultValue;
+                document.getElementById('fwa-ft').value = document.getElementById('fwa-ft').defaultValue;
+                document.getElementById('fwa-in').value = document.getElementById('fwa-in').defaultValue;
+                document.getElementById('fwa-in-num').value = document.getElementById('fwa-in-num').defaultValue;
+                document.getElementById('fwa-in-den').value = document.getElementById('fwa-in-den').defaultValue;
+                document.getElementById('salinity').value = document.getElementById('salinity').defaultValue;
+                document.getElementById('mean-draft').textContent = "";
+                document.getElementById('dwa').textContent = "";
+                document.getElementById('swd').textContent="";
+                document.getElementById('trim').textContent="";
+            }
+        </script>

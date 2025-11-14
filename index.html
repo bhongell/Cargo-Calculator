@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo and Draft Calculator</title>
+        <link rel="stylesheet" href="globalStyle.css">
+        <link rel="stylesheet" href="draftStyle.css">
+        <link rel="stylesheet" href="tonnageStyle.css">
+        
+<!-- jQuery -->
+    <script src="jquery-3.7.1.min.js"></script>
+
+<!--calculation scripts -->
+    <script src="dwaCalc.js"></script>
+    <script src="meanDraftCalc.js"></script>
+    <script src="swdCalc.js"></script>
+    <script src="currentTonnageCalc.js"></script>
+
+    <script>
+        $(function() {
+            // Load the dynamic draft content
+            $("#draft").load("drafts.html", function(response, status, xhr) {
+                if (status === "error") {
+                    console.error("Failed to load draft content:", xhr.statusText);
+                }
+            });
+
+            // Use event delegation to attach click listener even to dynamically loaded content
+            $(document).on('click', '#calculate', function() {
+                // Call all three functions on single button press
+                if (typeof handleCalculateDWA === "function") handleCalculateDWA();
+                if (typeof calculateMeanDraft === "function") calculateMeanDraft();
+                if (typeof calculateSWD === "function") calculateSWD();
+            });
+        });
+        $(function() {
+            // Load the dynamic tonnage content
+            $("#tonnage").load("tonnage.html", function(response, status, xhr) {
+                if (status === "error") {
+                    console.error("Failed to load draft content:", xhr.statusText);
+                }
+            });
+
+            // Use event delegation to attach click listener even to dynamically loaded content
+            $(document).on('click', '#calculate-tonnage', function() {
+                // Call all three functions on single button press
+                if (typeof currentTonnage === "function") currentTonnage();
+                if (typeof tonsToGo === "function") tonsToGo();
+                if (typeof TPI === "function") TPI();
+            });
+        
+        });
+    </script>
+</head>
+<body>
+    <div class="page-container">
+        <div>
+            <div class="title-container">
+                <h1>Cargo and Draft Calculator</h1>
+            </div>
+            <div class="title-container">
+                <h2>Draft</h2>
+            </div>
+            <div id="draft" class="container"></div>
+            <div class="title-container">
+                <h2>Tonnage</h2>
+            </div>
+            <div id="tonnage"></div>
+        </div>
+    </div>
+</body>
+</html>

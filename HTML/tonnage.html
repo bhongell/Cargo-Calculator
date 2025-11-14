@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+     <link rel="stylesheet" href="globalStyle.css">
+    <link rel="stylesheet" href="tonnageStyle.css">
+</head>
+    <div id="tonnage-container" class="container">
+        <form class="grid-form">
+            <!-- grid top row -->
+            <div class="grid-item grid-top-left"></div>
+            <div class="grid-item grid-top-title highlight">
+                <div><p>Drafts</p></div>
+                <div><p>Tonnage</p></div>
+            </div>
+            <!-- grid left column -->
+            <div class="grid-item grid-left-title highlight">
+                <div><p>Heavy</p></div>
+                <div><p>Current</p></div>
+                <div><p>Light</p></div>
+            </div>
+            <!-- grid entry field -->
+            <div class="grid-item grid-main-field highlight">
+                    <div class="grid-item grid-draft">
+                        <div class="inline-ftin"><input type="text" class="ftin" id="draft-hvy-ft" min="0" value=""><p>Ft</p></div>
+                        <div class="inline-ftin"><input type="text" class="ftin inches" id="draft-hvy-in" min="0" max="11" value=""><p>In</p></div></span>
+                    </div>
+                <div class="grid-item">
+                    <input type="text" class="input-tons" id="heavy-tons" min="0" value=""><p>T</p>
+                </div>
+                    <div class="grid-item grid-draft">
+                    <!-- not in input, thats why its in a div -->
+                        <span class="inline-ftin"><div class="ftin feet" id="draft-current-ft"value=""></div> <p>Ft</p> </span>
+                        <span class="inline-ftin"><div class="ftin inches" id="draft-current-in"value=""></div> <p>In</p></span>
+                    </div>
+                <div class="grid-item">
+                    <div class="result" id="current-tons"></div><p>T</p>
+                </div>
+                    <div class="grid-item grid-draft">
+                        <span class="inline-ftin"><input type="text" class="ftin feet" id="draft-lite-ft" min="0" value=""> <p>Ft</p> </span>
+                        <span class="inline-ftin"><input type="text" class="ftin inches" id="draft-lite-in" min="0" max="11" value=""> <p>In</p></span>
+                    </div>
+                    <div class="grid-item">
+                        <input type="text" class="input-tons" id="light-tons" min="0" value=""><p>T</p>
+                    </div>
+            </div>
+            <div class="grid-item grid-result-row">
+                <div class="grid-item-results max-tonnage highlight"><p>Max Tonnage:</p>
+                    <div class="inline-ftin">
+                        <input type="text" class="result" id="max-tons" min="0" value=""><p>T</p>
+                    </div>
+                </div>
+                    <span class="tonTG-TPI highlight">
+                        <div class="grid-item-results tonTG"><p>Tons to go:</p>
+                            <div class="inline-ftin">
+                                <div class="result" id="tons-to-max"></div><p>T</p>
+                            </div>
+                        </div>
+                        <div class="grid-item-results tpi"><p>TPI</p>
+                            <div class="inline-ftin">
+                                <div class="result" id="tpi"></div><p>T</p>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            <div class="grid-item grid-item-button-area">
+                <button id="calculate-tonnage" class="calculate-tonnage-button" type="button">Calculate</button>
+                <button id="reset-tonnage" class="reset-tonnage-button" type="button" onclick="resetFields()">Reset</button>
+            </div>
+        </form>
+    </div>
