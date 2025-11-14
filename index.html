@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cargo and Draft Calculator</title>
-        <link rel="stylesheet" href="globalStyle.css">
-        <link rel="stylesheet" href="draftStyle.css">
-        <link rel="stylesheet" href="tonnageStyle.css">
+        <link rel="stylesheet" href="CSS/globalStyle.css">
+        <link rel="stylesheet" href="CSS/draftStyle.css">
+        <link rel="stylesheet" href="CSS/tonnageStyle.css">
         
 <!-- jQuery -->
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="JS/jquery-3.7.1.min.js"></script>
 
 <!--calculation scripts -->
-    <script src="dwaCalc.js"></script>
-    <script src="meanDraftCalc.js"></script>
-    <script src="swdCalc.js"></script>
-    <script src="currentTonnageCalc.js"></script>
+    <script src="JS/dwaCalc.js"></script>
+    <script src="JS/meanDraftCalc.js"></script>
+    <script src="JS/swdCalc.js"></script>
+    <script src="JS/currentTonnageCalc.js"></script>
 
     <script>
         $(function() {
             // Load the dynamic draft content
-            $("#draft").load("drafts.html", function(response, status, xhr) {
+            $("#draft").load("HTML/drafts.html", function(response, status, xhr) {
                 if (status === "error") {
                     console.error("Failed to load draft content:", xhr.statusText);
                 }
@@ -36,7 +36,7 @@
         });
         $(function() {
             // Load the dynamic tonnage content
-            $("#tonnage").load("tonnage.html", function(response, status, xhr) {
+            $("#tonnage").load("HTML/tonnage.html", function(response, status, xhr) {
                 if (status === "error") {
                     console.error("Failed to load draft content:", xhr.statusText);
                 }
