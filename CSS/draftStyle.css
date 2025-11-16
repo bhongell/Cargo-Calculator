@@ -1,3 +1,10 @@
+.draft-container{
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+    width: 100%;
+    align-items: center;
+}
 .form{
     display: flex;
     flex-direction: column;
@@ -6,12 +13,20 @@
     width: 100%;
 }
 .top-input, .middle-input, .bottom-area, .tonnage-input{
-    padding: 1em;
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
     width: 90%;
+}
+.top-input{
+    display: none;
+}
+.top-input.active{
+    display: flex;
+}
+.fwa, .observed-salinity{
+    margin:0.5em 0
 }
 .bottom-area{
     flex-direction: row;
@@ -20,10 +35,16 @@
     gap: 1em;
     flex-wrap: wrap;
 }
+.bottom-calcs{
+    margin-top: 0.5em;
+}
+.button-area{
+    margin-bottom: 0.5em;
+}
 .button-area, .bottom-calcs{
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    padding: 1em;
     gap: 0.5em;
 }
 .inline, .inline-ftin, .inline-fwa{
@@ -59,4 +80,23 @@
 .grid-title{
     display: flex;
     justify-content: center;
+}
+
+.fourDrafts{
+    display:none;
+}
+.fourDrafts.active{
+    display: flex;
+}
+.unit-imperial{
+    display: flex;
+}
+.unit-imperial.hidden{
+    display: none;
+}
+.unit-metric{
+    display: none;
+}
+.unit-metric.active{
+    display: flex;
 }

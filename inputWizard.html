@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CSS/globalStyle.css">
+    <link rel="stylesheet" href="wizardStyle.css">
+    <script src="JS/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+    <input type="text" class="display-popup" id="popup-trigger">
+<!-- wizard Popup -->
+     <div id="wizard" class="wizard-container">
+        <div class="wizard-content">
+<!-- Step 1 -->
+            <div class="wizard-step" data-step="1">
+                <div class="wizard-header highlight">
+                    <h3>Salinity</h3>
+                    <p>Leave blank if not applicable.</p>
+                </div>
+                <div class="wizard-input">
+                    <input id="wizard-salinity" class="long-input" placeholder="e.g. 1.015" readonly>
+                </div>
+                <div class="number-grid ">
+                    <button class="grid-button" onclick="appendToWizardSalinity('7')">7</button>
+                    <button class="grid-button" onclick="appendToWizardSalinity('8')">8</button>
+                    <button class="grid-button" onclick="appendToWizardSalinity('9')">9</button>
+                    <button class="grid-button right-column" onclick="appendToWizardSalinity('-')">-</button>
+                    <button class="grid-button" onclick="appendToWizardSalinity('4')">4</button>
+                    <button class="grid-button" onclick="appendToWizardSalinity('5')">5</button>
+                    <button class="grid-button" onclick="appendToWizardSalinity('6')">6</button>
+                    <button class="grid-button right-column" onclick="appendToWizardSalinity('/')">/</button>
+                    <button class="grid-button" onclick="appendToWizardSalinity('1')">1</button>
+                    <button class="grid-button" onclick="appendToWizardSalinity('2')">2</button>
+                    <button class="grid-button" onclick="appendToWizardSalinity('3')">3</button>
+                    <button class="grid-button decimal right-column" onclick="appendToWizardSalinity('.')">.</button>
+                    <button class="grid-button" onclick="deleteSalinityDisplay()">C</button>
+                    <button class="grid-button zero" onclick="appendToWizardSalinity('0')">0</button>
+                </div>
+                <div class="button-area">
+                    <button class="nav-button hidden back-button">< Back</button>
+                    <button class="nav-button next-button">Next ></button>
+                </div>
+            </div>
+<!-- step 2 -->
+            <div class="wizard-step" data-step="2">
+                <div class="wizard-header highlight">
+                    <h3>FWA Ft</h3>
+                    <p>Leave blank if not applicable.</p>
+                </div>
+                <div class="wizard-input">
+                    <input type="text" id="wizard-fwa-ft" class="long-input" min="0" value="" placeholder="e.g. 2" readonly>
+                </div>
+                <div class="number-grid ">
+                    <button class="grid-button" onclick="appendToWizardFWAFt('7')">7</button>
+                    <button class="grid-button" onclick="appendToWizardFWAFt('8')">8</button>
+                    <button class="grid-button" onclick="appendToWizardFWAFt('9')">9</button>
+                    <button class="grid-button right-column" onclick="appendToWizardFWAFt('-')">-</button>
+                    <button class="grid-button" onclick="appendToWizardFWAFt('4')">4</button>
+                    <button class="grid-button" onclick="appendToWizardFWAFt('5')">5</button>
+                    <button class="grid-button" onclick="appendToWizardFWAFt('6')">6</button>
+                    <button class="grid-button right-column" onclick="appendToWizardFWAFt('/')">/</button>
+                    <button class="grid-button" onclick="appendToWizardFWAFt('1')">1</button>
+                    <button class="grid-button" onclick="appendToWizardFWAFt('2')">2</button>
+                    <button class="grid-button" onclick="appendToWizardFWAFt('3')">3</button>
+                    <button class="grid-button decimal right-column" onclick="appendToWizardFWAFt('.')">.</button>
+                    <button class="grid-button" onclick="deleteWizardFWAFt()">C</button>
+                    <button class="grid-button zero" onclick="appendToWizardFWAFt('0')">0</button>
+                </div>
+                <div class="button-area">
+                    <button class="nav-button back-button">< Back</button>
+                    <button class="nav-button next-button">Next ></button>
+                </div>
+            </div>  
+<!-- step 3  -->
+            <div class="wizard-step" data-step="3">
+                <div class="wizard-header highlight">
+                    <h3>FWA In</h3>
+                    <p>Leave blank if not applicable.</p>
+                </div>
+                <div class="wizard-input">
+                    <input type="text" id="wizard-fwa-in" class="long-input" min="0" value="" placeholder="e.g. 1-13/16" readonly>
+                </div>
+                <div class="number-grid ">
+                    <button class="grid-button" onclick="appendToWizardFWAIn('7')">7</button>
+                    <button class="grid-button" onclick="appendToWizardFWAIn('8')">8</button>
+                    <button class="grid-button" onclick="appendToWizardFWAIn('9')">9</button>
+                    <button class="grid-button right-column" onclick="appendToWizardFWAIn('-')">-</button>
+                    <button class="grid-button" onclick="appendToWizardFWAIn('4')">4</button>
+                    <button class="grid-button" onclick="appendToWizardFWAIn('5')">5</button>
+                    <button class="grid-button" onclick="appendToWizardFWAIn('6')">6</button>
+                    <button class="grid-button right-column" onclick="appendToWizardFWAIn('/')">/</button>
+                    <button class="grid-button" onclick="appendToWizardFWAIn('1')">1</button>
+                    <button class="grid-button" onclick="appendToWizardFWAIn('2')">2</button>
+                    <button class="grid-button" onclick="appendToWizardFWAIn('3')">3</button>
+                    <button class="grid-button decimal right-column" onclick="appendToWizardFWAIn('.')">.</button>
+                    <button class="grid-button" onclick="deleteWizardFWAIn()">C</button>
+                    <button class="grid-button zero" onclick="appendToWizardFWAIn('0')">0</button>
+                </div>
+                <div class="button-area">
+                    <button class="nav-button back-button">< Back</button>
+                    <button class="nav-button next-button">Next ></button>
+                </div>
+            </div>              
+            
+
+        </div>
+     </div>
+    <script src="wizard.js"></script>
+
+</body>
+</html>

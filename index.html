@@ -9,13 +9,13 @@
         <link rel="stylesheet" href="CSS/tonnageStyle.css">
         
 <!-- jQuery -->
-    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
 
 <!--calculation scripts -->
-    <script src="JS/dwaCalc.js"></script>
-    <script src="JS/meanDraftCalc.js"></script>
-    <script src="JS/swdCalc.js"></script>
-    <script src="JS/currentTonnageCalc.js"></script>
+    <script src="js/dwaCalc.js"></script>
+    <script src="js/meanDraftCalc.js"></script>
+    <script src="js/swdCalc.js"></script>
+    <script src="js/currentTonnageCalc.js"></script>
 
     <script>
         $(function() {
@@ -51,6 +51,7 @@
             });
         
         });
+        
     </script>
 </head>
 <body>
@@ -58,6 +59,20 @@
         <div>
             <div class="title-container">
                 <h1>Cargo and Draft Calculator</h1>
+            </div>
+            <div class="toggles highlight">
+                <span class="inline">
+                    <input id="draft-count" type="checkbox">
+                    <label for="draft-count">4 Drafts</label>
+                </span>
+                <span class="inline">
+                    <input id="salinity-fwa" type="checkbox">
+                    <label for="salinity-fwa">Salinity/FWA</label>
+                </span>
+                <span class="inline">
+                    <input id="units" type="checkbox">
+                    <label for="units">Meters</label>
+                </span>
             </div>
             <div class="title-container">
                 <h2>Draft</h2>

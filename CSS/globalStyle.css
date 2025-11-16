@@ -17,7 +17,7 @@ h1{
     color: blue;
 }
 h2{
-    border: 1px solid blue;
+
     font-size: 2em;
     text-align: center;
 }
@@ -25,10 +25,19 @@ p{
     padding: 0;
     margin: 0 0.2em 0.2em 0.2em;
 }
+.toggles{
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 550px;
+}
 
 .container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
     flex: 1;
     max-width: 550px;
     margin: 0 auto;
@@ -51,35 +60,27 @@ p{
 .reset-button, .reset-tonnage-button{
     background-color: red;
 }
-.tons, .result, .ftin, .result-tpi, .max-tons, .result-tons-max, .result-current-draft, .input-field-ft, .input-field-in, .input-field-salinity, .input-tons{
-  width: 6em;
+.tons, .result, .ftin, .result-tpi, .max-tons, .tons-to-max, .result-current-draft, .input-field-ft, .input-field-fwa-in, .input-field-salinity, .input-tons{
+  width: clamp(1em, 5em, 6em);
   height: 1.2em;
-  display: inline-block;
-  box-sizing: border-box;
   border: 1px solid black;
   padding: 0;
   padding-right: 0.3em;
   font: inherit;         
-  line-height: 1.5em;
+  line-height: 1.7em;
   vertical-align: middle;
-  text-align: right;
+  /* text-align: right; */
   text-justify: center;
   background-color: white;
 }
-.input-field-ft, .input-field-in, .input-field-salinity{
-    width: 2.5em;
+.input-field-ft, .input-field-fwa-in, .input-field-salinity{
+    width: 4em;
     margin: 0 0.2em;
 }
-.input-field-salinity{
-    width: 4em;
-}
-
 .ftin{
     width: 2.5em;
-    box-sizing: border-box;
 }
 .grid-item, .grid-item-results{
-    border: 1px dashed red;
     display: flex;
     flex-wrap: wrap;
     padding: 0.3em;

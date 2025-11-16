@@ -1,5 +1,17 @@
 var swd =0;
 function calculateSWD(){
+    if ($("#units").is(":checked")){
+        calculateSWDMetric();
+    } else {
+        calculateSWDImperial();
+    }
+}
+function calculateSWDMetric(){
+    swd=meanDraft-(DWA/100);
+    document.getElementById('swd').textContent=swd.toFixed(2) + " M";
+}
+
+function calculateSWDImperial(){
 //SWD Start
     swd = meanDraft-DWA;
     var feetSWD = Math.floor(swd/12);                 
