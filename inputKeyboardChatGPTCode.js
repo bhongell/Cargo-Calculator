@@ -3,7 +3,6 @@ let activeInput = null;
 
 // Focus detection for dynamically loaded inputs
 document.addEventListener("focusin", (e) => {
-    e.target.blur();
     if (e.target.classList.contains("custom-input")) {
         activeInput = e.target;
 
