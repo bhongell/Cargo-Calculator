@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CSS/globalStyle.css">
+    <link rel="stylesheet" href="inputKeyboard.css">
+    <script src="JS/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+<!-- wizard Popup -->
+     <div id="customKeyboard" class="wizard-container">
+        <div class="wizard-content">
+
+            <div id="customKeyboard" class="wizard-step" data-step="1">
+
+                <div class="number-grid ">
+                    <button class="key grid-button" onclick="appendToWizardSalinity('7')">7</button>
+                    <button class="key grid-button" onclick="appendToWizardSalinity('8')">8</button>
+                    <button class="key grid-button" onclick="appendToWizardSalinity('9')">9</button>
+                    <button class="key grid-button right-column" onclick="appendToWizardSalinity('-')">-</button>
+                    <button class="key grid-button" onclick="appendToWizardSalinity('4')">4</button>
+                    <button class="key grid-button" onclick="appendToWizardSalinity('5')">5</button>
+                    <button class="key grid-button" onclick="appendToWizardSalinity('6')">6</button>
+                    <button class="key grid-button right-column" onclick="appendToWizardSalinity('/')">/</button>
+                    <button class="key grid-button" onclick="appendToWizardSalinity('1')">1</button>
+                    <button class="key grid-button" onclick="appendToWizardSalinity('2')">2</button>
+                    <button class="key grid-button" onclick="appendToWizardSalinity('3')">3</button>
+                    <button class="key grid-button decimal right-column" onclick="appendToWizardSalinity('.')">.</button>
+                    <button class="key grid-button" onclick="deleteSalinityDisplay()">C</button>
+                    <button class="key grid-button zero" onclick="appendToWizardSalinity('0')">0</button>
+                </div>
+                <div class="button-area">
+                    <button class="nav-button back-button">< Back</button>
+                    <button class="nav-button next-button">Next ></button>
+                </div>
+            </div>
+    <script src="inputKeyboard.js"></script>
+
+</body>
+</html>

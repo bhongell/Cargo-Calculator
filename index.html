@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="CSS/globalStyle.css">
         <link rel="stylesheet" href="CSS/draftStyle.css">
         <link rel="stylesheet" href="CSS/tonnageStyle.css">
+        <link rel="stylesheet" href="inputKeyboard.css">
         
 <!-- jQuery -->
     <script src="js/jquery-3.7.1.min.js"></script>
@@ -16,6 +17,7 @@
     <script src="js/meanDraftCalc.js"></script>
     <script src="js/swdCalc.js"></script>
     <script src="js/currentTonnageCalc.js"></script>
+    <script src="inputKeyboardChatGPTCode.js"></script>
 
     <script>
         $(function() {
@@ -25,14 +27,6 @@
                     console.error("Failed to load draft content:", xhr.statusText);
                 }
             });
-
-            // Use event delegation to attach click listener even to dynamically loaded content
-            $(document).on('click', '#calculate', function() {
-                // Call all three functions on single button press
-                if (typeof handleCalculateDWA === "function") handleCalculateDWA();
-                if (typeof calculateMeanDraft === "function") calculateMeanDraft();
-                if (typeof calculateSWD === "function") calculateSWD();
-            });
         });
         $(function() {
             // Load the dynamic tonnage content
@@ -41,16 +35,20 @@
                     console.error("Failed to load draft content:", xhr.statusText);
                 }
             });
-
+        });
             // Use event delegation to attach click listener even to dynamically loaded content
-            $(document).on('click', '#calculate-tonnage', function() {
+             $(document).on('click', '#calculate', function() {
                 // Call all three functions on single button press
+                if (typeof handleCalculateDWA === "function") handleCalculateDWA();
+                if (typeof calculateMeanDraft === "function") calculateMeanDraft();
+                if (typeof calculateSWD === "function") calculateSWD();
                 if (typeof currentTonnage === "function") currentTonnage();
                 if (typeof tonsToGo === "function") tonsToGo();
-                if (typeof TPI === "function") TPI();
-            });
+                
+            });           
+
         
-        });
+
         
     </script>
 </head>
@@ -83,6 +81,38 @@
             </div>
             <div id="tonnage"></div>
         </div>
+            <div id="customKeyboard" class="custom-keyboard hidden">
+                <div class="keyboard-top-area">
+                    <button class="nav-button back-button key"><</button>
+                    <div class="keyboard-display" id="keyboard-display"></div>                
+                    <button class="nav-button next-button key">></button>
+                </div>
+                <div class="number-grid">
+                    <button class="key grid-button">7</button>
+                    <button class="key grid-button">8</button>
+                    <button class="key grid-button">9</button>
+                    <button class="key grid-button right-column">-</button>
+                    <button class="key grid-button">4</button>
+                    <button class="key grid-button">5</button>
+                    <button class="key grid-button">6</button>
+                    <button class="key grid-button right-column">/</button>
+                    <button class="key grid-button">1</button>
+                    <button class="key grid-button">2</button>
+                    <button class="key grid-button">3</button>
+                    <button class="key grid-button decimal right-column">.</button>
+                    <button class="key grid-button" >C</button>
+                    <button class="key grid-button zero">0</button>
+                </div>
+                <div class="keyboard-bottom-area">
+                <button id="keyboard-calculate" class="calculate-button" type="button">Calculate</button>
+                </div>
+            </div>
+   
     </div>
+    <script>
+
+
+
+    </script>
 </body>
 </html>

@@ -13,12 +13,12 @@
                     <div class="grid-item">Heavy</div>
                     <div class="grid-item">
                         <div class="inline">
-                            <div class="inline-ftin"><input type="text" class="ftin" id="draft-hvy-ft" min="0" value=""><p class="unit-imperial">Ft</p><p class="unit-metric">M</p></div>
-                            <div class="inline-ftin unit-imperial"><input type="text" class="ftin inches" id="draft-hvy-in" min="0" max="11" value=""><p>In</p></div></span>
+                            <div class="inline-ftin"><input type="text" class="ftin custom-input" id="draft-hvy-ft" min="0" value=""><p class="unit-imperial">Ft</p><p class="unit-metric">M</p></div>
+                            <div class="inline-ftin unit-imperial"><input type="text" class="ftin inches custom-input" id="draft-hvy-in" min="0" max="11" value=""><p>In</p></div></span>
                         </div>
                     </div>
                     <div class="grid-item">
-                        <input type="text" class="input-tons" id="heavy-tons" min="0" value="">
+                        <input type="text" class="input-tons custom-input" id="heavy-tons" min="0" value="">
                     </div>
                     <div class="grid-item">Current</div>
                     <div class="grid-item">
@@ -33,17 +33,16 @@
                     <div class="grid-item">Light</div>
                     <div class="grid-item">
                         <div class="inline">
-                            <span class="inline-ftin"><input type="text" class="ftin" id="draft-lite-ft" min="0" value=""> <p class="unit-imperial">Ft</p><p class="unit-metric">M</p> </span>
-                            <span class="inline-ftin unit-imperial"><input type="text" class="ftin" id="draft-lite-in" min="0" max="11" value=""> <p>In</p></span>
+                            <span class="inline-ftin"><input type="text" class="ftin custom-input" id="draft-lite-ft" min="0" value=""> <p class="unit-imperial">Ft</p><p class="unit-metric">M</p> </span>
+                            <span class="inline-ftin unit-imperial"><input type="text" class="ftin custom-input" id="draft-lite-in" min="0" max="11" value=""> <p>In</p></span>
                         </div>
                     </div>
                     <div class="grid-item">
-                        <input type="text" class="input-tons" id="light-tons" min="0" value="">
+                        <input type="text" class="input-tons custom-input" id="light-tons" min="0" value="">
                     </div>
-                    <div class="grid-item-results max-tonnage"><p>Max Tonnage:</p>
-                        <div class="inline-ftin">
-                            <input type="text" class="result" id="max-tons" min="0" value="">
-                        </div>
+                    <div class="max-tonnage">
+                        <p>Max Tonnage:</p>
+                        <input type="text" class="result custom-input" id="max-tons" min="0" value="">
                     </div>
                 </div>
             </div>
@@ -56,15 +55,9 @@
                         </div>
                         <div class="result" id="tons-to-max"></div>
                     </div>
-                    <div class="inline">
-                        <div class="title">
-                            <p>TPI:</p>
-                        </div>
-                        <div class="result" id="tpi"></div>
-                    </div>
                 </div>               
                 <div class="button-area">
-                    <button id="calculate-tonnage" class="calculate-tonnage-button" type="button">Calculate</button>
+                <button id="calculate" class="calculate-button" type="button">Calculate</button>
                     <button id="reset-tonnage" class="reset-tonnage-button" type="button" onclick="resetTonnageFields()">Reset</button>
                 </div>               
             </div>
