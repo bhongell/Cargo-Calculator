@@ -11,16 +11,16 @@
         <div id="top-input" class="top-input highlight"> <!--Top Input-->
             <div class="inline observed-salinity">
                 <label>Observed Salinity:</label>
-                <span><input inputmode="numeric" type="text" id="salinity" class="input-field-salinity custom-input" placeholder="1.015" min="1.000" max="1.025" step="0.001" >Relative Density</span>
+                <span><input inputmode="none" type="text" id="salinity" class="input-field-salinity custom-input" placeholder="1.015" min="1.000" max="1.025" step="0.001" >Relative Density</span>
             </div>
             <br>
             <div class="inline fwa">
                 <label>Fresh Water Allowance:</label>
                 <span class="inline-fwa">
-                    <input inputmode="numeric" type="text" id="fwa-ft" class="input-field-ft custom-input" min="0" value="" placeholder="3" >
+                    <input inputmode="none" type="text" id="fwa-ft" class="input-field-ft custom-input" min="0" value="" placeholder="3" >
                     <p class="unit-imperial">Ft</p>
                     <p class="unit-metric">Cm</p>
-                    <input inputmode="numeric" type="text" id="fwa-in" class="input-field-fwa-in unit-imperial custom-input" value="" placeholder="1-1/2" >
+                    <input inputmode="none" type="text" id="fwa-in" class="input-field-fwa-in unit-imperial custom-input" value="" placeholder="1-1/2" >
                     <p class="unit-imperial">In</p>
                 </span>
             </div>
@@ -37,44 +37,44 @@
                 <div class="grid-item grid-title">FWD</div>
                 <div class="grid-item">
                     <div class="inline">
-                        <div class="inline-ftin"><input inputmode="numeric" type="text" class="ftin custom-input" id="port-fwd-ft" min="0" value="" >
+                        <div class="inline-ftin"><input inputmode="none" type="text" class="ftin custom-input" id="port-fwd-ft" min="0" value="" >
                             <p class="unit-imperial">Ft</p>
                             <p class="unit-metric">M</p>
                         </div>
-                        <div class="inline-ftin unit-imperial"><input inputmode="numeric" type="text" class="ftin custom-input" id="port-fwd-in" min="0" max="11"value="" >
+                        <div class="inline-ftin unit-imperial"><input inputmode="none" type="text" class="ftin custom-input" id="port-fwd-in" min="0" max="11"value="" >
                             <p class="unit-imperial">In</p>
                         </div>
                     </div>
                 </div>
                 <div class="grid-item">
                     <div class="inline fourDrafts">
-                        <div class="inline-ftin"><input inputmode="numeric" type="text" class="ftin custom-input" id="stbd-fwd-ft" min="0" value="" >
+                        <div class="inline-ftin"><input inputmode="none" type="text" class="ftin custom-input" id="stbd-fwd-ft" min="0" value="" >
                             <p class="unit-imperial">Ft</p>
                             <p class="unit-metric">M</p>
                         </div>
-                        <div class="inline-ftin unit-imperial"><input inputmode="numeric" type="text" class="ftin custom-input" id="stbd-fwd-in" min="0" max="11" value="" >
+                        <div class="inline-ftin unit-imperial"><input inputmode="none" type="text" class="ftin custom-input" id="stbd-fwd-in" min="0" max="11" value="" >
                             <p class="unit-imperial">In</p></div>
                     </div>
                 </div>
                 <div class="grid-item">AFT</div>
                 <div class="grid-item">
                     <div class="inline">
-                        <div class="inline-ftin"><input inputmode="numeric" type="text" class="ftin custom-input" id="port-aft-ft" min="0" value="" >
+                        <div class="inline-ftin"><input inputmode="none" type="text" class="ftin custom-input" id="port-aft-ft" min="0" value="" >
                             <p class="unit-imperial">Ft</p>
                             <p class="unit-metric">M</p>
                         </div>
-                        <div class="inline-ftin unit-imperial"><input inputmode="numeric" type="text" class="ftin custom-input" id="port-aft-in" min="0" max="11"value="" >
+                        <div class="inline-ftin unit-imperial"><input inputmode="none" type="text" class="ftin custom-input" id="port-aft-in" min="0" max="11"value="" >
                             <p class="unit-imperial">In</p>
                         </div>
                     </div>
                 </div>
                 <div class="grid-item">
                     <div class="inline fourDrafts">
-                        <div class="inline-ftin"><input inputmode="numeric" type="text" class="ftin custom-input" id="stbd-aft-ft" min="0" value="" >
+                        <div class="inline-ftin"><input inputmode="none" type="text" class="ftin custom-input" id="stbd-aft-ft" min="0" value="" >
                             <p class="unit-imperial">Ft</p>
                             <p class="unit-metric">M</p>
                         </div>
-                        <div class="inline-ftin unit-imperial"><input inputmode="numeric" type="text" class="ftin custom-input" id="stbd-aft-in" min="0" max="11" value="" >
+                        <div class="inline-ftin unit-imperial"><input inputmode="none" type="text" class="ftin custom-input" id="stbd-aft-in" min="0" max="11" value="" >
                             <p class="unit-imperial">In</p></div>
                     </div>
                 </div>
@@ -126,8 +126,6 @@
         document.getElementById('stbd-aft-in').value = document.getElementById('stbd-aft-in').defaultValue;
         document.getElementById('fwa-ft').value = document.getElementById('fwa-ft').defaultValue;
         document.getElementById('fwa-in').value = document.getElementById('fwa-in').defaultValue;
-        document.getElementById('fwa-in-num').value = document.getElementById('fwa-in-num').defaultValue;
-        document.getElementById('fwa-in-den').value = document.getElementById('fwa-in-den').defaultValue;
         document.getElementById('salinity').value = document.getElementById('salinity').defaultValue;
         document.getElementById('mean-draft').textContent = "";
         document.getElementById('dwa').textContent = "";

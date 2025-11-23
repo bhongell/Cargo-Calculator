@@ -17,9 +17,13 @@
     <script src="js/meanDraftCalc.js"></script>
     <script src="js/swdCalc.js"></script>
     <script src="js/currentTonnageCalc.js"></script>
-    <script src="inputKeyboardChatGPTCode.js"></script>
 
     <script>
+        if (window.innerWidth < 450) { // you can adjust threshold
+    var s = document.createElement("script");
+    s.src = "inputKeyboardChatGPTCode.js";
+    document.head.appendChild(s);
+}
         $(function() {
             // Load the dynamic draft content
             $("#draft").load("HTML/drafts.html", function(response, status, xhr) {
@@ -53,7 +57,7 @@
     </script>
 </head>
 <body>
-    <div class="page-container">
+    <div id="page-container" class="page-container">
         <div>
             <div class="title-container">
                 <h1>Cargo and Draft Calculator</h1>
@@ -83,9 +87,8 @@
         </div>
             <div id="customKeyboard" class="custom-keyboard hidden">
                 <div class="keyboard-top-area">
-                    <button class="nav-button back-button key"><</button>
-                    <div class="keyboard-display" id="keyboard-display"></div>                
-                    <button class="nav-button next-button key">></button>
+                    <button class="nav-button back-button key">< Back</button>
+                    <button class="nav-button next-button key">Next ></button>
                 </div>
                 <div class="number-grid">
                     <button class="key grid-button">7</button>

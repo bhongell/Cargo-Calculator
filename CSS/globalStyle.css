@@ -6,6 +6,13 @@ body{
     font-weight: 200;
     background-color: rgb(216, 216, 216);
 }
+.page-container{
+    display: flex;
+    flex-direction: column;
+}
+.page-container.active-input{
+    margin-bottom: 75vh;
+}
 input{
     font-size: inherit;
     font-weight: 350;
