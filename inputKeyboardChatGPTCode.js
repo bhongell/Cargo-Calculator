@@ -60,7 +60,7 @@ document.addEventListener("touchstart", function (e) {
             const next = inputs[idx + 1];
             next.focus();
             activeInput = next;
-            next.scrollIntoView({behavior:"smooth", block:"top"});
+            next.scrollIntoView({behavior:"smooth", block:"start"});
             document.getElementById("keyboard-display").textContent = "";
         }
     }
@@ -74,7 +74,7 @@ document.addEventListener("touchstart", function (e) {
             const last = inputs[idx - 1];
             last.focus();
             activeInput = last;
-            last.scrollIntoView({ behavior: "smooth", block: "top" });
+            last.scrollIntoView({ behavior: "smooth", block: "start" });
             document.getElementById("keyboard-display").textContent = "";
             activeInput.value = "";
         }
