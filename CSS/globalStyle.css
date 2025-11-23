@@ -5,13 +5,15 @@ body{
     font-size: 14px;
     font-weight: 200;
     background-color: rgb(216, 216, 216);
+    overflow-x: hidden;
+    max-width: 100%;
 }
 .page-container{
     display: flex;
     flex-direction: column;
 }
 .page-container.active-input{
-    margin-bottom: 75vh;
+    margin-bottom: 305px;
 }
 input{
     font-size: inherit;

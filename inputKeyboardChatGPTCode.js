@@ -96,6 +96,7 @@ document.addEventListener("touchstart", function (e) {
 
         if ((!clickedInsideKeyboard && !clickedInput) || calculate.contains(e.target)) {
             keyboard.classList.add("hidden");
+            document.getElementById("page-container").classList.remove("active-input");
         }
     });
 
