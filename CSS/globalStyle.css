@@ -68,6 +68,11 @@ p{
 }
 .reset-button, .reset-tonnage-button{
     background-color: red;
+    border-color: rgb(255, 126, 126);
+}
+.calculate-button{
+    background-color: rgba(0, 170, 0, 0.575) ;
+    border-color: rgb(166, 247, 166);
 }
 .tons, .result, .ftin, .result-tpi, .max-tons, .tons-to-max, .result-current-draft, .input-field-ft, .input-field-fwa-in, .input-field-salinity, .input-tons{
   width: clamp(1em, 5em, 6em);

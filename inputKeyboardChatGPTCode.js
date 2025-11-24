@@ -6,6 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
         input.setAttribute("inputmode", "none");
     });
 });
+function scrollToTopOfViewport(el) {
+    const rect = el.getBoundingClientRect();
+    const scrollTop = window.pageYOffset + rect.top - 10; // adjust offset if needed
+
+    window.scrollTo({
+        top: scrollTop,
+        behavior: "smooth"
+    });
+}
 
 // Block native keyboard on touch
 document.addEventListener("touchstart", function (e) {
@@ -19,7 +28,10 @@ document.addEventListener("touchstart", function (e) {
         if (e.target.classList.contains("custom-input")) {
             activeInput = e.target;
             // activeInput.scrollIntoView({behavior:"smooth", block:"start"});
-            activeInput.scrollIntoView();
+            
+        requestAnimationFrame(() => {
+            scrollToTopOfViewport(activeInput);
+        });
 
             // Show the custom keyboard
             document.getElementById("customKeyboard").classList.remove("hidden");
@@ -63,8 +75,9 @@ document.addEventListener("touchstart", function (e) {
             activeInput = next;
             // next.scrollIntoView({behavior:"smooth", block:"start"});
             
+
         requestAnimationFrame(() => {
-            next.scrollIntoView();
+            scrollToTopOfViewport(next);
         });
             
             document.getElementById("keyboard-display").textContent = "";
@@ -82,8 +95,9 @@ document.addEventListener("touchstart", function (e) {
             activeInput = last;
             // last.scrollIntoView({ behavior: "smooth", block: "start" });
 
+
         requestAnimationFrame(() => {
-            last.scrollIntoView();
+            scrollToTopOfViewport(last);
         });
             document.getElementById("keyboard-display").textContent = "";
             activeInput.value = "";
