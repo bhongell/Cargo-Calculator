@@ -17,45 +17,9 @@ function calculateDWAMetric(){
 
 }     
 function calculateDWAImperial(){
-                function parseFraction(input) {
-                input = input.trim();
-
-                // Check for mixed number: "1 11/16"
-                if (input.includes(" ")) {
-                    const [whole, fraction] = input.split(" ");
-                    const [num, den] = fraction.split("/").map(Number);
-                    const fwaDec = num/den;
-                        if (isFinite(fwaDec)) {
-                        console.log("Valid FWA decimal:", fwaDec);
-                        } else {
-                        console.log("Ignoring NaN or Infinity");
-                        fwaDec = 0; // or just skip it
-                    }
-                    return Number(whole) + (fwaDec);
-                }
-
-                // Simple fraction: "13/64"
-                if (input.includes("/")) {
-                    const [num, den] = input.split("/").map(Number);
-                    const fwaDec =num/den;
-                        if (isFinite(fwaDec)) {
-                        console.log("Valid FWA decimal:", fwaDec);
-                        } else {
-                        console.log("Ignoring NaN or Infinity");
-                        fwaDec = 0; // or just skip it  
-                        }                  
-                    return fwaDec;
-                }
-
-                // Just a whole number: "5"
-                return Number(input);
-            }
-
             function handleCalculateFwaIn() {
                 var fwaFt = parseInt(document.getElementById('fwa-ft').value) || 0;
-                var fwaInString = (document.getElementById('fwa-in').value || "").trim();
-                fwaInString=fwaInString.replace("-"," ");
-                var fwaIn= parseFraction(fwaInString);
+                var fwaIn = parseFloat(document.getElementById('fwa-in').value) || 0;
                 fwaInches= (fwaFt*12)+fwaIn;
                 return fwaInches;
                 
