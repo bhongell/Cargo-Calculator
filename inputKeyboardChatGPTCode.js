@@ -18,7 +18,8 @@ document.addEventListener("touchstart", function (e) {
     document.addEventListener("focusin", (e) => {
         if (e.target.classList.contains("custom-input")) {
             activeInput = e.target;
-            activeInput.scrollIntoView({behavior:"smooth", block:"start"});
+            // activeInput.scrollIntoView({behavior:"smooth", block:"start"});
+            activeInput.scrollIntoView();
 
             // Show the custom keyboard
             document.getElementById("customKeyboard").classList.remove("hidden");
@@ -60,7 +61,9 @@ document.addEventListener("touchstart", function (e) {
             const next = inputs[idx + 1];
             next.focus();
             activeInput = next;
-            next.scrollIntoView({behavior:"smooth", block:"start"});
+            // next.scrollIntoView({behavior:"smooth", block:"start"});
+            next.scrollIntoView();
+            
             document.getElementById("keyboard-display").textContent = "";
         }
     }
@@ -74,7 +77,8 @@ document.addEventListener("touchstart", function (e) {
             const last = inputs[idx - 1];
             last.focus();
             activeInput = last;
-            last.scrollIntoView({ behavior: "smooth", block: "start" });
+            // last.scrollIntoView({ behavior: "smooth", block: "start" });
+            last.scrollIntoView();
             document.getElementById("keyboard-display").textContent = "";
             activeInput.value = "";
         }
