@@ -62,7 +62,10 @@ document.addEventListener("touchstart", function (e) {
             next.focus();
             activeInput = next;
             // next.scrollIntoView({behavior:"smooth", block:"start"});
+            
+        requestAnimationFrame(() => {
             next.scrollIntoView();
+        });
             
             document.getElementById("keyboard-display").textContent = "";
         }
@@ -78,7 +81,10 @@ document.addEventListener("touchstart", function (e) {
             last.focus();
             activeInput = last;
             // last.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        requestAnimationFrame(() => {
             last.scrollIntoView();
+        });
             document.getElementById("keyboard-display").textContent = "";
             activeInput.value = "";
         }
