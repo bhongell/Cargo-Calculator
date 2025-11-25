@@ -131,6 +131,10 @@
         document.getElementById('dwa').textContent = "";
         document.getElementById('swd').textContent = "";
         document.getElementById('trim').textContent = "";
+        const invalid=document.querySelectorAll('.invalid', '.improper');
+        invalid.forEach(element=>{
+        element.classList.remove('invalid','improper');
+        });
     }
     //toggle 4 drafts
      function showFourDrafts(){

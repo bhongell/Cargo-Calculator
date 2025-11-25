@@ -31,7 +31,7 @@ function calculateCurrentTonnageMetric(){
     }
     document.getElementById('current-tons').textContent = tonnageCurrent.toFixed(2);
 }
-function currentTonnageImperial(){
+function calculateCurrentTonnageImperial(){
 //variables
     var draftHvyFt = parseInt(document.getElementById('draft-hvy-ft').value) ||0;
     var draftHvyIn = parseInt(document.getElementById('draft-hvy-in').value) ||0;

@@ -19,11 +19,6 @@
     <script src="js/currentTonnageCalc.js"></script>
 
     <script>
-    //     if (window.innerWidth < 450) { // you can adjust threshold
-    // var s = document.createElement("script");
-    // s.src = "inputKeyboardChatGPTCode.js";
-    // document.head.appendChild(s);
-//}
         $(function() {
             // Load the dynamic draft content
             $("#draft").load("HTML/drafts.html", function(response, status, xhr) {
@@ -41,15 +36,18 @@
             });
         });
             // Use event delegation to attach click listener even to dynamically loaded content
-             $(document).on('click', '#calculate-draft', '#calculate-tonnage', function() {
+             $(document).on('click', '#calculate-draft', function() {
                 // Call all three functions on single button press
                 if (typeof handleCalculateDWA === "function") handleCalculateDWA();
+                if (typeof calculateSWD === "function") calculateSWD();                
                 if (typeof calculateMeanDraft === "function") calculateMeanDraft();
-                if (typeof calculateSWD === "function") calculateSWD();
-                if (typeof currentTonnage === "function") currentTonnage();
-                if (typeof tonsToGo === "function") tonsToGo();
-                
-            });           
+            });
+            // Use event delegation to attach click listener even to dynamically loaded content
+            $(document).on('click','#calculate-tonnage', function() {
+            // Call all three functions on single button press
+            if (typeof currentTonnage === "function") currentTonnage();
+            if (typeof tonsToGo === "function") tonsToGo(); 
+        });             
 
         
 
@@ -86,33 +84,13 @@
             <div id="tonnage"></div>
         </div> 
     </div>
-    <div id="customKeyboard" class="custom-keyboard hidden">
-        <div class="keyboard-top-area">
-            <button class="nav-button back-button key">< Back</button>
-            <button id="keyboard-calculate" class="calculate-button" type="button">Calculate</button>
-            <button class="nav-button next-button key">Next ></button>
-        </div>
-        <div class="number-grid">
-            <button class="key grid-button">7</button>
-            <button class="key grid-button">8</button>
-            <button class="key grid-button">9</button>
-            <button class="key grid-button right-column">-</button>
-            <button class="key grid-button">4</button>
-            <button class="key grid-button">5</button>
-            <button class="key grid-button">6</button>
-            <button class="key grid-button right-column">/</button>
-            <button class="key grid-button">1</button>
-            <button class="key grid-button">2</button>
-            <button class="key grid-button">3</button>
-            <button class="key grid-button decimal right-column">.</button>
-            <button class="key grid-button" >C</button>
-            <button class="key grid-button zero">0</button>
-        </div>
-    </div>
     <script>
-
-
-
+    document.addEventListener("focusin", (e) => {
+        if (e.target.classList.contains("invalid","improper")) {
+            activeInput = e.target;
+            activeInput.classList.remove("invalid","improper")
+        }
+    });
     </script>
 </body>
 </html>

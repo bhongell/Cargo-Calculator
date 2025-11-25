@@ -18,7 +18,9 @@ body{
 input{
     font-size: inherit;
     font-weight: 350;
-    color:black
+    color:black;
+    text-align: end;
+    text-justify: center;
 }
 h1{
     font-size: 2.5em;
@@ -78,7 +80,7 @@ p{
   width: clamp(1em, 5em, 6em);
   height: 1.2em;
   border: 1px solid black;
-  padding: 0;
+  padding: 0.1em;
   padding-right: 0.3em;
   font: inherit;         
   line-height: 1.7em;
@@ -86,6 +88,10 @@ p{
   /* text-align: right; */
   text-justify: center;
   background-color: white;
+}
+.result{
+    text-align: right;
+    text-justify: center;
 }
 .input-field-ft, .input-field-fwa-in, .input-field-salinity{
     width: 4em;
@@ -109,4 +115,12 @@ p{
 .inline-ftin{
     display: flex;
     margin: 0 0.1em;
+}
+.invalid{
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.555);
+}
+.improper{
+    border: 1px solid orange;
+    background-color: rgba(255, 166, 0, 0.555);
 }
