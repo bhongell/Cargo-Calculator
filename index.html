@@ -39,8 +39,8 @@
              $(document).on('click', '#calculate-draft', function() {
                 // Call all three functions on single button press
                 if (typeof handleCalculateDWA === "function") handleCalculateDWA();
-                if (typeof calculateSWD === "function") calculateSWD();                
                 if (typeof calculateMeanDraft === "function") calculateMeanDraft();
+                if (typeof calculateSWD === "function") calculateSWD();                
             });
             // Use event delegation to attach click listener even to dynamically loaded content
             $(document).on('click','#calculate-tonnage', function() {

@@ -7,13 +7,21 @@ function calculateSWD(){
     }
 }
 function calculateSWDMetric(){
-    swd=meanDraft-(DWA/100);
+            if(DWA==0){
+                swd=meanDraft
+            }else{
+                swd = meanDraft-(DWA/100);
+            };
     document.getElementById('swd').textContent=swd.toFixed(2) + " M";
 }
 
 function calculateSWDImperial(){
 //SWD Start
-    swd = meanDraft-DWA;
+            if(DWA==0){
+                swd=meanDraft
+            }else{
+                swd = meanDraft-DWA;
+            };
     var feetSWD = Math.floor(swd/12);                 
     var inchesSWD = Math.round(swd % 12); 
 
