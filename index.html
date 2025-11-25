@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="CSS/globalStyle.css">
         <link rel="stylesheet" href="CSS/draftStyle.css">
         <link rel="stylesheet" href="CSS/tonnageStyle.css">
-        <link rel="stylesheet" href="inputKeyboard.css">
         
 <!-- jQuery -->
     <script src="js/jquery-3.7.1.min.js"></script>
@@ -19,6 +18,7 @@
     <script src="js/currentTonnageCalc.js"></script>
 
     <script>
+// Loads Draft Field
         $(function() {
             // Load the dynamic draft content
             $("#draft").load("HTML/drafts.html", function(response, status, xhr) {
@@ -27,6 +27,7 @@
                 }
             });
         });
+// Loads Tonnage Field
         $(function() {
             // Load the dynamic tonnage content
             $("#tonnage").load("HTML/tonnage.html", function(response, status, xhr) {
@@ -35,24 +36,21 @@
                 }
             });
         });
-            // Use event delegation to attach click listener even to dynamically loaded content
-             $(document).on('click', '#calculate-draft', function() {
-                // Call all three functions on single button press
-                if (typeof handleCalculateDWA === "function") handleCalculateDWA();
-                if (typeof calculateMeanDraft === "function") calculateMeanDraft();
-                if (typeof calculateSWD === "function") calculateSWD();                
-            });
-            // Use event delegation to attach click listener even to dynamically loaded content
-            $(document).on('click','#calculate-tonnage', function() {
-            // Call all three functions on single button press
+// Draft Calculate calls calculate functions
+        $(document).on('click', '#calculate-draft', function() {
+        // Call all functions on single button press
+            if (typeof handleCalculateDWA === "function") handleCalculateDWA();
+            if (typeof calculateMeanDraft === "function") calculateMeanDraft();
+            if (typeof calculateSWD === "function") calculateSWD();                
+        });
+// Tonnage Calculate calls calculate functions
+        $(document).on('click','#calculate-tonnage', function() {
+        // Call all functions on single button press
             if (typeof currentTonnage === "function") currentTonnage();
             if (typeof tonsToGo === "function") tonsToGo(); 
         });             
-
-        
-
-        
     </script>
+
 </head>
 <body>
     <div id="page-container" class="page-container">
@@ -60,6 +58,7 @@
             <div class="title-container">
                 <h1>Cargo and Draft Calculator</h1>
             </div>
+<!-- Toggle Section Start -->
             <div class="toggles highlight">
                 <span class="inline">
                     <input id="draft-count" type="checkbox">
@@ -74,6 +73,8 @@
                     <label for="units">Meters</label>
                 </span>
             </div>
+<!-- Toggle Section End -->
+<!-- Body Section Start -->
             <div class="title-container">
                 <h2>Draft</h2>
             </div>
@@ -82,13 +83,15 @@
                 <h2>Tonnage</h2>
             </div>
             <div id="tonnage"></div>
-        </div> 
+        </div>
+<!-- Body section end -->
     </div>
     <script>
+// Removes logic testing classes on click
     document.addEventListener("focusin", (e) => {
-        if (e.target.classList.contains("invalid","improper")) {
-            activeInput = e.target;
-            activeInput.classList.remove("invalid","improper")
+        if (e.target.classList.contains("invalid")||
+            e.target.classList.contains("improper")) {
+            e.target.classList.remove("invalid","improper");
         }
     });
     </script>

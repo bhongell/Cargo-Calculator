@@ -8,7 +8,8 @@
 
 
     <form class="form">
-        <div id="top-input" class="top-input highlight"> <!--Top Input-->
+ <!--Top Input-->
+        <div id="top-input" class="top-input highlight">
             <div class="inline observed-salinity">
                 <label>Observed Salinity:</label>
                 <span><input inputmode="decimal" type="text" id="salinity" class="input-field-salinity custom-input" placeholder="1.015" min="1.000" max="1.025" step="0.001" >Relative Density</span>
@@ -24,8 +25,10 @@
                     <p class="unit-imperial">In</p>
                 </span>
             </div>
-        </div><!--Top Input End-->
-        <div class="middle-input highlight"><!--middle input-->
+        </div>
+<!--Top Input End-->
+<!--middle input-->
+        <div class="middle-input highlight">
             <div class="grid">
                 <div class="grid-item"></div>
                 <div class="grid-item grid-title">
@@ -79,9 +82,12 @@
                     </div>
                 </div>
             </div>
-        </div><!--middle input end-->
-        <div class="bottom-area highlight"><!--bottom area-->
-            <div class="bottom-calcs"><!--bottom calcs-->
+        </div>
+<!--middle input end-->
+<!--bottom area-->
+        <div class="bottom-area highlight">
+    <!--bottom calcs-->
+            <div class="bottom-calcs">
                 <div class="inline">
                     <div class="title">
                         <p>Mean Draft:</p>
@@ -106,15 +112,20 @@
                     </div>
                     <div class="result" id="swd"></div>
                 </div>
-            </div><!--bottom calcs end-->
-            <div class="button-area"><!--Button area-->
+            </div>
+    <!--bottom calcs end-->
+    <!--Button area-->
+            <div class="button-area">
                 <button id="calculate-draft" class="calculate-button" type="button">Calculate</button>
                 <button id="reset" class="reset-button" type="button" onclick="resetDraftFields()">Reset</button>
-            </div><!--Button area end-->
-        </div><!--bottom area end-->
+            </div>
+    <!--Button area end-->
+        </div>
+<!--bottom area end-->
     </form>
 </div>
 <script>
+// reset fields
     function resetDraftFields() {
         document.getElementById('port-fwd-ft').value = document.getElementById('port-fwd-ft').defaultValue;
         document.getElementById('port-fwd-in').value = document.getElementById('port-fwd-in').defaultValue;
@@ -136,12 +147,14 @@
         element.classList.remove('invalid','improper');
         });
     }
-    //toggle 4 drafts
+//toggle 4 drafts
      function showFourDrafts(){
     $(".fourDrafts").addClass("active");
+    resetDraftFields();
     }
     function hideFourDrafts(){
     $(".fourDrafts").removeClass("active");
+    resetDraftFields();
     }
 
     $('#draft-count').on("change",function(){
@@ -151,12 +164,14 @@
             hideFourDrafts();
         }
     });
-    // toggle salinity
+// toggle salinity
          function showSalinityFWA(){
     $(".top-input").addClass("active");
+    resetDraftFields();
     }
     function hideSalinityFWA(){
     $(".top-input").removeClass("active");
+    resetDraftFields();
     }
 
     $('#salinity-fwa').on("change",function(){
@@ -166,14 +181,17 @@
             hideSalinityFWA();
         }
     });
-    //toggle meters
+//toggle meters
     function Meters(){
     $(".unit-imperial").addClass("hidden");
     $(".unit-metric").addClass("active");
+    resetDraftFields();
     }
     function Imperial(){
     $(".unit-imperial").removeClass("hidden");
-    $(".unit-metric").removeClass("active");    }
+    $(".unit-metric").removeClass("active");
+    resetDraftFields();
+    }
 
     $('#units').on("change",function(){
         if($(this).is(":checked")){
@@ -182,5 +200,4 @@
             Imperial();
         }
     });
-
 </script>

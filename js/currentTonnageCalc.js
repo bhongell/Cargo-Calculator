@@ -34,9 +34,9 @@ function calculateCurrentTonnageMetric(){
 function calculateCurrentTonnageImperial(){
 //variables
     var draftHvyFt = parseInt(document.getElementById('draft-hvy-ft').value) ||0;
-    var draftHvyIn = parseInt(document.getElementById('draft-hvy-in').value) ||0;
+    var draftHvyIn = parseInt(document.getElementById('draft-hvy-in').value) ||"";
     var draftLiteFt = parseInt(document.getElementById('draft-lite-ft').value) ||0;
-    var draftLiteIn = parseInt(document.getElementById('draft-lite-in').value) ||0;
+    var draftLiteIn = parseInt(document.getElementById('draft-lite-in').value) ||"";
     var tonnageHvy = parseInt(document.getElementById('heavy-tons').value) ||0;
     var tonnageLite = parseInt(document.getElementById('light-tons').value) ||0;
 //calculations
@@ -59,9 +59,31 @@ function calculateCurrentTonnageImperial(){
         tonnageCurrent = tonnageLite+tonnageDifference;
     }
     document.getElementById('current-tons').textContent = tonnageCurrent.toFixed(2);
+// Logic Checks
+    if((draftHvyFt!=0||draftLiteFt!=0)&&(draftHvyIn==""||draftLiteIn=="")){
+        document.getElementById('draft-hvy-ft').classList.add("improper");
+        document.getElementById('draft-hvy-in').classList.add("improper");
+        document.getElementById('draft-lite-ft').classList.add("improper");
+        document.getElementById('draft-lite-in').classList.add("improper");
+    }
+    if((draftHvyFtIn!=0||draftLiteFtIn!=0)&&(tonnageHvy==0||tonnageLite==0)){
+        document.getElementById('draft-hvy-ft').classList.add("invalid");
+        document.getElementById('draft-hvy-in').classList.add("invalid");
+        document.getElementById('draft-lite-ft').classList.add("invalid");
+        document.getElementById('draft-lite-in').classList.add("invalid");
+        document.getElementById('heavy-tons').classList.add("invalid");      
+        document.getElementById('light-tons').classList.add("invalid");
+        document.getElementById('current-tons').textContent="Check";      
+      
+    }
 }
 function tonsToGo(){
     var maxTonnage = parseInt(document.getElementById('max-tons').value) ||0;
     var tonsToGo=maxTonnage-tonnageCurrent;
+    if(maxTonnage!=0){
     document.getElementById('tons-to-max').textContent = tonsToGo.toFixed(2);
+    } else{
+    document.getElementById('tons-to-max').textContent="";
+    }
 }
+

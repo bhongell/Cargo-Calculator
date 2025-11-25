@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <head>
      <link rel="stylesheet" href="CSS/globalStyle.css">
-    <link rel="stylesheet" href="Css/tonnageStyle.css">
+    <link rel="stylesheet" href="CSS/tonnageStyle.css">
 </head>
     <div id="tonnage-container" class="container">
         <form class="grid-form">
+<!-- Input Field -->
             <div class="grid-container highlight">
                 <div class="grid">
                     <div class="grid-item"></div>
@@ -46,7 +47,8 @@
                     </div>
                 </div>
             </div>
-
+<!-- Input Field End-->
+<!-- Bottom Area -->
             <div class="bottom-area highlight">
                 <div class="bottom-calcs">
                     <div class="inline">
@@ -61,20 +63,21 @@
                     <button id="reset-tonnage" class="reset-tonnage-button" type="button" onclick="resetTonnageFields()">Reset</button>
                 </div>               
             </div>
+<!-- Bottom Area End -->
         </form>
     </div>
 <script>
      function resetTonnageFields() {
-        document.getElementById('heavy-tons').value = document.getElementById('port-fwd-ft').defaultValue;
-        document.getElementById('current-tons').value = document.getElementById('port-fwd-in').defaultValue;
-        document.getElementById('draft-hvy-ft').value = document.getElementById('port-fwd-ft').defaultValue;
-        document.getElementById('draft-hvy-in').value = document.getElementById('port-fwd-in').defaultValue;
+        document.getElementById('heavy-tons').value = document.getElementById('heavy-tons').defaultValue;
+        document.getElementById('current-tons').textContent=""
+        document.getElementById('draft-hvy-ft').value = document.getElementById('draft-hvy-ft').defaultValue;
+        document.getElementById('draft-hvy-in').value = document.getElementById('draft-hvy-in').defaultValue;
         document.getElementById('draft-current-ft').textContent="";
         document.getElementById('draft-current-in').textContent="";
-        document.getElementById('draft-lite-ft').value = document.getElementById('stbd-aft-ft').defaultValue;
-        document.getElementById('draft-lite-in').value = document.getElementById('stbd-aft-in').defaultValue;
-        document.getElementById('light-tons').value = document.getElementById('fwa-ft').defaultValue;
-        document.getElementById('max-tons').value = document.getElementById('fwa-in').defaultValue;
+        document.getElementById('draft-lite-ft').value = document.getElementById('draft-lite-ft').defaultValue;
+        document.getElementById('draft-lite-in').value = document.getElementById('draft-lite-in').defaultValue;
+        document.getElementById('light-tons').value = document.getElementById('light-tons').defaultValue;
+        document.getElementById('max-tons').value = document.getElementById('max-tons').defaultValue;
         document.getElementById('tons-to-max').textContent = "";
         const invalid=document.querySelectorAll('.invalid', '.improper');
         invalid.forEach(element=>{

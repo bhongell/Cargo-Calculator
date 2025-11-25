@@ -30,7 +30,7 @@ function calculateDWAMetric(){
     // Print to display and log
     document.getElementById('dwa').textContent=DWA.toFixed(1) + " Cm";
     console.log("DWA",DWA);
-    // Logic Checks
+// Logic Checks
     if ((salinity!=""||fwa!="")&&(salinity==""||fwa=="")){
     document.getElementById('salinity').classList.add("improper");
     document.getElementById('fwa-ft').classList.add("improper");
@@ -65,7 +65,7 @@ function calculateDWAImperial(){
         // Print to log
     console.log("DWA",DWA);
     console.log("fwaInches",fwaInches);
-    // Logic Checks
+// Logic Checks
     if ((salinity!=""||fwaInches!=0)&&(salinity==""||fwaFt==""||fwaIn=="")){
     document.getElementById('salinity').classList.add("improper");
     document.getElementById('fwa-ft').classList.add("improper");
