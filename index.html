@@ -107,8 +107,20 @@
         }
     });
     function closeDisclaimer(){
-        document.getElementById('popup-overlay').classList.add('hidden');
+        const disclaimer=document.getElementById('popup-overlay');
+        disclaimer.classList.add('hidden');
+        sessionStorage.setItem("disclaimerClosed", "true")
+        if(sessionStorage.getItem("disclaimerClosed")==="true"){
+        disclaimer.classList.add('hidden');
+        } 
     }
+    window.addEventListener("load", () => {
+    const disclaimer = document.getElementById('popup-overlay');
+
+    if (sessionStorage.getItem("disclaimerClosed") === "true") {
+        disclaimer.classList.add('hidden');
+    }
+});
     </script>
 </body>
 </html>

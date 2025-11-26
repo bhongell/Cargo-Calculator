@@ -1,6 +1,6 @@
 /*global*/
 body{
-    padding: 5%;
+
     font-family: Arial, sans-serif;
     font-size: 14px;
     font-weight: 200;
@@ -11,9 +11,6 @@ body{
 .page-container{
     display: flex;
     flex-direction: column;
-}
-.page-container.active-input{
-    margin-bottom: 305px;
 }
 input{
     font-size: inherit;
@@ -43,7 +40,6 @@ p{
     margin: 0 auto;
     max-width: 550px;
 }
-
 .container{
     display: flex;
     flex-direction: column;
