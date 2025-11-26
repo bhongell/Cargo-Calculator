@@ -66,6 +66,8 @@ p{
     width: 6em;
     height: 2em;
     text-align: center;
+    color: black;
+    font-size: inherit;
     margin: 0;
 }
 .reset-button, .reset-tonnage-button{

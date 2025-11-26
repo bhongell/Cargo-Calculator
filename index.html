@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="CSS/globalStyle.css">
         <link rel="stylesheet" href="CSS/draftStyle.css">
         <link rel="stylesheet" href="CSS/tonnageStyle.css">
+        <link rel="stylesheet" href="CSS/disclaimerStyle.css">
         
 <!-- jQuery -->
     <script src="js/jquery-3.7.1.min.js"></script>
@@ -85,6 +86,17 @@
             <div id="tonnage"></div>
         </div>
 <!-- Body section end -->
+ <!-- Disclaimer popup Start -->
+        <div id="popup-overlay" class="popup-overlay">
+            <div id="popup-content" class="popup-content">
+                <button id="exit-button" class="exit-button" onclick="closeDisclaimer()">X</button>
+                <h3>Disclaimer:</h3>
+                <p class="disclaimer-p">This tool is for reference only. While this calculator has been tested there may still be situations where it does not work properly. <br>Please use your best judgement in its use.</p>
+                <h3>Notes:</h3>
+                <p class="disclaimer-p">All input fields should be utalized for the respective calculation. Orange error boxes will show if a field has not been fully filled out. Red boxes indicate a critical field which has not been filled out.</p>
+            </div>
+            <!-- disclaimer popup end -->
+        </div>
     </div>
     <script>
 // Removes logic testing classes on click
@@ -94,6 +106,9 @@
             e.target.classList.remove("invalid","improper");
         }
     });
+    function closeDisclaimer(){
+        document.getElementById('popup-overlay').classList.add('hidden');
+    }
     </script>
 </body>
 </html>

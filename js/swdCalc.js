@@ -13,6 +13,9 @@ function calculateSWDMetric(){
                 swd = meanDraft-(DWA/100);
             };
     document.getElementById('swd').textContent=swd.toFixed(2) + " M";
+    document.getElementById('draft-current-ft').textContent = swd.toFixed(2);
+
+
 }
 
 function calculateSWDImperial(){
@@ -31,5 +34,8 @@ function calculateSWDImperial(){
     }
      // display as "X ft Y in"
     document.getElementById('swd').textContent = feetSWD + " ft " + inchesSWD + " in";
+    document.getElementById('draft-current-ft').textContent = feetSWD;
+    document.getElementById('draft-current-in').textContent =  inchesSWD;
+
     
 }
