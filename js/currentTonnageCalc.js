@@ -9,10 +9,14 @@ function currentTonnage(){
 }
 function calculateCurrentTonnageMetric(){
 //Variables
-    var draftHvyM = parseInt(document.getElementById('draft-hvy-ft').value) ||0;
-    var draftLiteM = parseInt(document.getElementById('draft-lite-ft').value) ||0;
-    var tonnageHvy = parseInt(document.getElementById('heavy-tons').value) ||0;
-    var tonnageLite = parseInt(document.getElementById('light-tons').value) ||0;
+    var hvyM = parseInt(document.getElementById('draft-hvy-ft').value) ||"";
+    var draftHvyM=Number(hvyFt)||0;
+    var liteM = parseInt(document.getElementById('draft-lite-ft').value) ||"";
+    var draftLiteM=Number(hvyFt)||0;
+    var tonHvy = parseInt(document.getElementById('heavy-tons').value) ||"";
+    var tonnageHvy=Number(hvyFt)||0;
+    var tonLite = parseInt(document.getElementById('light-tons').value) ||"";
+    var tonnageLite=Number(hvyFt)||0;
 //Calculations
         //Draft side
     var draftDen = draftHvyM-draftLiteM;
@@ -30,15 +34,42 @@ function calculateCurrentTonnageMetric(){
         tonnageCurrent = tonnageLite+tonnageDifference;
     }
     document.getElementById('current-tons').textContent = tonnageCurrent.toFixed(2);
+// Logic Checks
+if(hvyM==""|liteM==""||tonHvy==""||tonLite==""){
+    // label the "div id" as id to check and label based on above.
+    const ids = ["draft-hvy-ft", "draft-hvy-in", "draft-lite-ft", "draft-lite-in", "heavy-tons", "light-tons"];
+
+    ids.forEach(id => {
+        const input = document.getElementById(id);
+
+        if (input.value.trim() === "") {
+            input.classList.add("improper");
+        }
+    });
+}
+if(hvyFt!=""&&hvyIn!=""&&liteFt!=""&&liteIn!=""&&tonHvy!=""&&tonLite!=""){
+    document.getElementById('draft-hvy-ft').classList.remove("improper");
+    document.getElementById('draft-hvy-in').classList.remove("improper");    
+    document.getElementById('draft-lite-ft').classList.remove("improper");
+    document.getElementById('draft-lite-in').classList.remove("improper");
+    document.getElementById('heavy-tons').classList.remove("improper");
+    document.getElementById('light-tons').classList.remove("improper");
+    }
 }
 function calculateCurrentTonnageImperial(){
 //variables
-    var draftHvyFt = parseInt(document.getElementById('draft-hvy-ft').value) ||0;
-    var draftHvyIn = parseInt(document.getElementById('draft-hvy-in').value) ||"";
-    var draftLiteFt = parseInt(document.getElementById('draft-lite-ft').value) ||0;
-    var draftLiteIn = parseInt(document.getElementById('draft-lite-in').value) ||"";
-    var tonnageHvy = parseInt(document.getElementById('heavy-tons').value) ||0;
-    var tonnageLite = parseInt(document.getElementById('light-tons').value) ||0;
+    var hvyFt = parseInt(document.getElementById('draft-hvy-ft').value) ||"";
+    var draftHvyFt=Number(hvyFt)||0;
+    var hvyIn = parseInt(document.getElementById('draft-hvy-in').value) ||"";
+    var draftHvyIn=Number(hvyIn)||0;
+    var liteFt = parseInt(document.getElementById('draft-lite-ft').value) ||"";
+    var draftLiteFt=Number(liteFt)||0;
+    var liteIn = parseInt(document.getElementById('draft-lite-in').value) ||"";
+    var draftHvyFt=Number(liteIn)||0;
+    var tonHvy = parseInt(document.getElementById('heavy-tons').value) ||"";
+    var tonnageHvy=Number(tonHvy)||0;
+    var tonLite = parseInt(document.getElementById('light-tons').value) ||"";
+    var tonnageLite=Number(tonLite)||0;
 //calculations
     //drafts to inches
     var draftHvyFtIn = (draftHvyFt*12)+draftHvyIn;
@@ -60,22 +91,26 @@ function calculateCurrentTonnageImperial(){
     }
     document.getElementById('current-tons').textContent = tonnageCurrent.toFixed(2);
 // Logic Checks
-    if((draftHvyFt!=0||draftLiteFt!=0)&&(draftHvyIn==""||draftLiteIn=="")){
-        document.getElementById('draft-hvy-ft').classList.add("improper");
-        document.getElementById('draft-hvy-in').classList.add("improper");
-        document.getElementById('draft-lite-ft').classList.add("improper");
-        document.getElementById('draft-lite-in').classList.add("improper");
+    if(hvyFt==""||hvyIn==""||liteFt==""||liteIn==""||tonHvy==""||tonLite==""){
+        // label the "div id" as id to check and label based on above.
+        const ids = ["draft-hvy-ft", "draft-hvy-in", "draft-lite-ft", "draft-lite-in", "heavy-tons", "light-tons"];
+
+        ids.forEach(id => {
+            const input = document.getElementById(id);
+
+            if (input.value.trim() === "") {
+                input.classList.add("improper");
+            }
+        });
     }
-    if((draftHvyFtIn!=0||draftLiteFtIn!=0)&&(tonnageHvy==0||tonnageLite==0)){
-        document.getElementById('draft-hvy-ft').classList.add("invalid");
-        document.getElementById('draft-hvy-in').classList.add("invalid");
-        document.getElementById('draft-lite-ft').classList.add("invalid");
-        document.getElementById('draft-lite-in').classList.add("invalid");
-        document.getElementById('heavy-tons').classList.add("invalid");      
-        document.getElementById('light-tons').classList.add("invalid");
-        document.getElementById('current-tons').textContent="Check";      
-      
-    }
+    if(hvyFt!=""&&hvyIn!=""&&liteFt!=""&&liteIn!=""&&tonHvy!=""&&tonLite!=""){
+        document.getElementById('draft-hvy-ft').classList.remove("improper");
+        document.getElementById('draft-hvy-in').classList.remove("improper");    
+        document.getElementById('draft-lite-ft').classList.remove("improper");
+        document.getElementById('draft-lite-in').classList.remove("improper");
+        document.getElementById('heavy-tons').classList.remove("improper");
+        document.getElementById('light-tons').classList.remove("improper");
+        }
 }
 function tonsToGo(){
     var maxTonnage = parseInt(document.getElementById('max-tons').value) ||0;

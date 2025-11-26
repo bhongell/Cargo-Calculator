@@ -18,6 +18,7 @@ input{
     color:black;
     text-align: end;
     text-justify: center;
+    border-radius: 5px;
 }
 h1{
     font-size: 2.5em;
@@ -78,6 +79,7 @@ p{
   width: clamp(1em, 5em, 6em);
   height: 1.2em;
   border: 1px solid black;
+  border-radius: 5px;
   padding: 0.1em;
   padding-right: 0.3em;
   font: inherit;         
