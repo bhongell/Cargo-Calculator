@@ -55,49 +55,50 @@
 </head>
 <body>
     <div id="page-container" class="page-container">
-        <div>
             <div class="title-container">
-                <h1>Cargo and Draft Calculator</h1>
+                <h1>Draft and Tonnage Calculator</h1>
             </div>
 <!-- Toggle Section Start -->
-            <div class="toggles highlight">
-                <span class="inline">
-                    <input id="draft-count" type="checkbox">
-                    <label for="draft-count">4 Drafts</label>
-                </span>
-                <span class="inline">
-                    <input id="salinity-fwa" type="checkbox">
-                    <label for="salinity-fwa">Salinity/FWA</label>
-                </span>
-                <span class="inline">
-                    <input id="units" type="checkbox">
-                    <label for="units">Meters</label>
-                </span>
+            <div class="page-sub-container spacer-containers">
+                <div class="toggles ">
+                    <!-- <button class="toggle" onclick="toggle4Drafts()"><input type="checkbox" name="4Drafts" id="draft-count">4 Drafts</button>
+                    <button class="toggle" onclick="toggleSalinity()"><input type="checkbox" name="salinity-fwa" id="salinity-fwa">Salinity / FWA</button>
+                    <button class="toggle" onclick="toggleUnits()"><input type="checkbox" name="units" id="units">Meters</button> -->
+                   
+                   
+                    <div class="toggle highlight toggle-button">
+                        <input id="draft-count" type="checkbox">
+                        <label for="draft-count">4 Drafts</label>
+                    </div>
+                    <div class="toggle highlight toggle-button">
+                        <input id="salinity-fwa" type="checkbox">
+                        <label for="salinity-fwa">Salinity/FWA</label>
+                    </div>
+                    <div class="toggle highlight toggle-button">
+                        <input id="units" type="checkbox">
+                        <label for="units">Meters</label>
+                    </div>
+                </div>
             </div>
 <!-- Toggle Section End -->
 <!-- Body Section Start -->
-            <div class="title-container">
-                <h2>Draft</h2>
+            <div id="main-body" class="page-sub-container">
+                <div id="draft" class="container"></div>
+                <div id="tonnage" class="container"></div>
             </div>
-            <div id="draft" class="container"></div>
-            <div class="title-container">
-                <h2>Tonnage</h2>
-            </div>
-            <div id="tonnage"></div>
-        </div>
 <!-- Body section end -->
  <!-- Disclaimer popup Start -->
-        <div id="popup-overlay" class="popup-overlay">
-            <div id="popup-content" class="popup-content">
-                <button id="exit-button" class="exit-button" onclick="closeDisclaimer()">X</button>
-                <h3>Disclaimer:</h3>
-                <p class="disclaimer-p">This tool is for reference only. While this calculator has been tested there may still be situations where it does not work properly. <br>Please use your best judgement in its use.</p>
-                <h3>Notes:</h3>
-                <p class="disclaimer-p">All input fields should be utalized for the respective calculation. Orange error boxes will show if a field has not been fully filled out. Red boxes indicate a critical field which has not been filled out.</p>
+            <div id="popup-overlay" class="popup-overlay">
+                <div id="popup-content" class="popup-content">
+                    <button id="exit-button" class="exit-button" onclick="closeDisclaimer()">X</button>
+                    <h3>Disclaimer:</h3>
+                    <p class="disclaimer-p">This tool is for reference only. While this calculator has been tested there may still be situations where it does not work properly. <br>Please use your best judgement in its use.</p>
+                    <h3>Notes:</h3>
+                    <p class="disclaimer-p">All input fields should be utalized for the respective calculation. Orange error boxes will show if a field has not been fully filled out. Red boxes indicate a critical field which has not been filled out.</p>
+                </div>
+                <!-- disclaimer popup end -->
             </div>
-            <!-- disclaimer popup end -->
         </div>
-    </div>
     <script>
 // Removes logic testing classes on click
     document.addEventListener("focusin", (e) => {
@@ -121,6 +122,39 @@
         disclaimer.classList.add('hidden');
     }
 });
+// function toggle4Drafts(){
+//     const checkbox=document.getElementById('draft-count');
+//     const isChecked=checkbox.checked;
+//     if(isChecked){
+//         checkbox.checked=false;
+//         hideFourDrafts();
+//     }else{
+//         checkbox.checked=true;
+//         showFourDrafts();
+//     }
+// }
+// function toggleSalinity(){
+//     const checkbox=document.getElementById('salinity-fwa');
+//     const isChecked=checkbox.checked;
+//     if(isChecked){
+//         checkbox.checked=false;
+//         hideSalinityFWA();
+//     }else{
+//         checkbox.checked=true;
+//         showSalinityFWA();
+//     }
+// }
+// function toggleUnits(){
+//     const checkbox=document.getElementById('units');
+//     const isChecked=checkbox.checked;
+//     if(isChecked){
+//         checkbox.checked=false;
+//         Imperial();
+//     }else{
+//         checkbox.checked=true;
+//         Metric();
+//     }
+// }
     </script>
 </body>
 </html>

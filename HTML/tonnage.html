@@ -3,8 +3,9 @@
      <link rel="stylesheet" href="CSS/globalStyle.css">
     <link rel="stylesheet" href="CSS/tonnageStyle.css">
 </head>
-    <div id="tonnage-container" class="container">
-        <form class="grid-form">
+        <div class="title-container">
+            <h2>Tonnage</h2>
+        </div>
 <!-- Input Field -->
             <div class="grid-container highlight">
                 <div class="grid">
@@ -14,18 +15,18 @@
                     <div class="grid-item">Heavy</div>
                     <div class="grid-item">
                         <div class="inline">
-                            <div class="inline-ftin"><input inputmode="decimal" type="text" class="ftin custom-input" id="draft-hvy-ft" min="0" value=""><p class="unit-imperial">Ft</p><p class="unit-metric">M</p></div>
-                            <div class="inline-ftin unit-imperial"><input inputmode="decimal" type="text" class="ftin inches custom-input" id="draft-hvy-in" min="0" max="11" value=""><p>In</p></div></span>
+                            <div class="inline-ftin"><input inputmode="decimal" type="text" class="input short" id="draft-hvy-ft" min="0" value=""><p class="unit-imperial">Ft</p><p class="unit-metric">M</p></div>
+                            <div class="inline-ftin unit-imperial"><input inputmode="decimal" type="text" class="input short inches" id="draft-hvy-in" min="0" max="11" value=""><p>In</p></div></span>
                         </div>
                     </div>
                     <div class="grid-item">
-                        <input inputmode="decimal" type="text" class="input-tons custom-input" id="heavy-tons" min="0" value="">
+                        <input inputmode="decimal" type="text" class="input" id="heavy-tons" min="0" value="">
                     </div>
                     <div class="grid-item">Current</div>
                     <div class="grid-item">
                         <div class="inline">
-                            <span class="inline-ftin"><div class="ftin" id="draft-current-ft"value=""></div> <p class="unit-imperial">Ft</p><p class="unit-metric">M</p></span>
-                            <span class="inline-ftin unit-imperial"><div class="ftin" id="draft-current-in"value=""></div> <p>In</p></span>
+                            <span class="inline-ftin"><div class="result short" id="draft-current-ft"value=""></div> <p class="unit-imperial">Ft</p><p class="unit-metric">M</p></span>
+                            <span class="inline-ftin unit-imperial"><div class="result short" id="draft-current-in"value=""></div> <p>In</p></span>
                         </div>
                     </div>
                     <div class="grid-item">
@@ -34,16 +35,16 @@
                     <div class="grid-item">Light</div>
                     <div class="grid-item">
                         <div class="inline">
-                            <span class="inline-ftin"><input inputmode="decimal" type="text" class="ftin custom-input" id="draft-lite-ft" min="0" value=""> <p class="unit-imperial">Ft</p><p class="unit-metric">M</p> </span>
-                            <span class="inline-ftin unit-imperial"><input inputmode="decimal" type="text" class="ftin custom-input" id="draft-lite-in" min="0" max="11" value=""> <p>In</p></span>
+                            <span class="inline-ftin"><input inputmode="decimal" type="text" class="input short" id="draft-lite-ft" min="0" value=""> <p class="unit-imperial">Ft</p><p class="unit-metric">M</p> </span>
+                            <span class="inline-ftin unit-imperial"><input inputmode="decimal" type="text" class="input short" id="draft-lite-in" min="0" max="11" value=""> <p>In</p></span>
                         </div>
                     </div>
                     <div class="grid-item">
-                        <input inputmode="decimal" type="text" class="input-tons custom-input" id="light-tons" min="0" value="">
+                        <input inputmode="decimal" type="text" class="input" id="light-tons" min="0" value="">
                     </div>
                     <div class="max-tonnage">
                         <p>Max Tonnage:</p>
-                        <input inputmode="decimal" type="text" class="result custom-input" id="max-tons" min="0" value="">
+                        <input inputmode="decimal" type="text" class="result" id="max-tons" min="0" value="">
                     </div>
                 </div>
             </div>
@@ -64,8 +65,7 @@
                 </div>               
             </div>
 <!-- Bottom Area End -->
-        </form>
-    </div>
+
 <script>
      function resetTonnageFields() {
         document.getElementById('heavy-tons').value = document.getElementById('heavy-tons').defaultValue;

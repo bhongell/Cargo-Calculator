@@ -1,7 +1,9 @@
 var DWA = 0;
 var salinity=0;
 function handleCalculateDWA(){
-    if ($("#units").is(":checked")){
+    const toggle=document.getElementById('units');
+    const toggleState=toggle.checked
+    if (toggleState){
         calculateDWAMetric();
     } else {
         calculateDWAImperial();
