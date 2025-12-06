@@ -20,7 +20,7 @@ body{
     background-color: var(--background-color);
     overflow-x: hidden;
     max-width: 100%;
-    padding: 3% 0 5% 0;
+    padding: 3% 0 0% 0;
 }
 
 .page-container{
@@ -185,4 +185,8 @@ p{
 .improper{
     border: 1px solid orange;
     background-color: rgba(255, 166, 0, 0.555);
+}
+.version{
+    margin-top: 3em;
+    color: rgba(128, 128, 128, 0.637);
 }

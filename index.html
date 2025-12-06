@@ -42,13 +42,14 @@
         // Call all functions on single button press
             if (typeof handleCalculateDWA === "function") handleCalculateDWA();
             if (typeof calculateMeanDraft === "function") calculateMeanDraft();
-            if (typeof calculateSWD === "function") calculateSWD();                
+            if (typeof calculateSWD === "function") calculateSWD();       
         });
 // Tonnage Calculate calls calculate functions
         $(document).on('click','#calculate-tonnage', function() {
         // Call all functions on single button press
             if (typeof currentTonnage === "function") currentTonnage();
             if (typeof tonsToGo === "function") tonsToGo(); 
+            console.log("calculate-tonnage")
         });             
     </script>
 
@@ -99,6 +100,7 @@
                 <!-- disclaimer popup end -->
             </div>
         </div>
+        <p id="info" class="version"></p>
     <script>
 // Removes logic testing classes on click
     document.addEventListener("focusin", (e) => {
@@ -157,4 +159,5 @@
 // }
     </script>
 </body>
+<script src="./renderer.js"></script>
 </html>

@@ -10,13 +10,14 @@ function currentTonnage(){
 function calculateCurrentTonnageMetric(){
 //Variables
     var hvyM = parseInt(document.getElementById('draft-hvy-ft').value) ||"";
-    var draftHvyM=Number(hvyFt)||0;
+    var draftHvyM=Number(hvyM)||0;
     var liteM = parseInt(document.getElementById('draft-lite-ft').value) ||"";
-    var draftLiteM=Number(hvyFt)||0;
+    var draftLiteM=Number(liteM)||0;
     var tonHvy = parseInt(document.getElementById('heavy-tons').value) ||"";
-    var tonnageHvy=Number(hvyFt)||0;
+    var tonnageHvy=Number(tonHvy)||0;
     var tonLite = parseInt(document.getElementById('light-tons').value) ||"";
-    var tonnageLite=Number(hvyFt)||0;
+    var tonnageLite=Number(tonLite)||0;
+    console.log("drafts", draftHvyM, draftLiteM, tonnageHvy, tonnageLite)
 //Calculations
         //Draft side
     var draftDen = draftHvyM-draftLiteM;
@@ -65,7 +66,7 @@ function calculateCurrentTonnageImperial(){
     var liteFt = parseInt(document.getElementById('draft-lite-ft').value) ||"";
     var draftLiteFt=Number(liteFt)||0;
     var liteIn = parseInt(document.getElementById('draft-lite-in').value) ||"";
-    var draftHvyFt=Number(liteIn)||0;
+    var draftLiteIn=Number(liteIn)||0;
     var tonHvy = parseInt(document.getElementById('heavy-tons').value) ||"";
     var tonnageHvy=Number(tonHvy)||0;
     var tonLite = parseInt(document.getElementById('light-tons').value) ||"";

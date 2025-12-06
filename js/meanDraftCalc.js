@@ -115,6 +115,8 @@ function imperialTwoDrafts(){
     var portAftFt=Number(pAftFt)||0; 
     var pAftIn = parseFloat(document.getElementById('port-aft-in').value) ||"";
     var portAftIn=Number(pAftIn)||0;
+    console.log("Drafts-FtIn",portFwdFt,portFwdIn,portAftFt,portAftIn);
+
     // FTIN to IN
     var Fwd = (portFwdFt*12)+portFwdIn;
     var Aft = (portAftFt*12)+portAftIn;
