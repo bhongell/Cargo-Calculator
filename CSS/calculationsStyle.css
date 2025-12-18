@@ -1,0 +1,97 @@
+.fwa{
+    display: flex;
+    flex-direction: column;
+}
+.calculations-overlay{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calculations{
+    display: flex;
+    max-width: 50%;
+    height: fit-content;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-radius: 15px;
+    background-color: var(--highlight-color);
+    box-shadow: 0em 0em 10px 0.3em var(--highlight-color-boxShadow);
+    border-radius: 20px;
+}
+.calculation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    width: 90%;
+    flex-wrap: wrap;
+
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+.division{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 0.25em;
+}
+
+.divisor{
+    display: flex;
+    border: 1px solid black;
+}
+.title-container{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.grid-calculations{
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    grid-template-rows: repeat(3, auto);
+
+}
+.mean-draft-calcs{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.exit-button-calculation{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 2em;
+    width: 2em;
+    border-radius: 25px;
+    background-color: rgba(250, 11, 3, 0.76);
+    border: 1px solid red; 
+}
+.hidden{
+    display: none;
+}
+.calculation-subcontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    width: 100%;
+
+
+}
+.horizontal{
+    flex-direction: row;
+    justify-content: center;
+}

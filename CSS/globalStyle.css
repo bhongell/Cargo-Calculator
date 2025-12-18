@@ -54,7 +54,7 @@ body{
 
 }
 input, .result{
-    width: clamp(1em, 5em, 6em);
+    width: 6em;
     height: 1.2em;
     border: 1px solid black;
     border-radius: 5px;
@@ -91,7 +91,7 @@ input[type=checkbox]:hover{
     background-color: var(--accent-color);
 
 }
-.input-field-ft, .input-field-fwa-in, .input-field-salinity{
+.input-field-fwa-in, .input-field-salinity{
     width: 4em;
     margin: 0 0.2em;
 }
@@ -189,4 +189,19 @@ p{
 .version{
     margin-top: 3em;
     color: rgba(128, 128, 128, 0.637);
+}
+.info{
+    border: 2px solid black;
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-radius: 25px;
+    width: 1.5em;
+    height: 1.5em;
+    font-weight: 900;
+    font-size: 18px;
+}
+.info:hover{
+    background-color: var(--accent-color)
 }

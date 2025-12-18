@@ -1,3 +1,5 @@
+const Main = require("electron/main");
+
 var meanDraft = 0;
 function calculateMeanDraft(){
     if ($("#units").is(":checked")){
@@ -45,8 +47,9 @@ function imperialFourDrafts(){
     var stbdAft = (stbdAftFt*12)+stbdAftIn;
     console.log('Drafts-In', portFwd,stbdFwd,portAft,stbdAft);
     // average f/a inches
-    var Fwd = (portFwd+stbdFwd)/2
-    var Aft = (portAft+stbdAft)/2
+    var Fwd = (portFwd+stbdFwd)/2;
+    var Aft = (portAft+stbdAft)/2;
+
     console.log('Drafts-F/A', Fwd,Aft);
 
     // calculate mean draft in inches
@@ -75,6 +78,16 @@ function imperialFourDrafts(){
         if(trim===0){
             document.getElementById('trim').textContent=0;
         }
+// Calculations Page
+        document.getElementById('port-fwd').textContent=portFwd;
+        document.getElementById('port-aft').textContent=portAft;
+        document.getElementById('stbd-fwd').textContent=stbdFwd;
+        document.getElementById('stbd-aft').textContent=stbdAft;
+        document.getElementById('fwd-average').textContent=Fwd.toFixed(2)+' In';
+        document.getElementById('aft-average').textContent=Aft.toFixed(2)+' In';
+        document.getElementById('fwd-average-calc').textContent=Fwd.toFixed(2)+' In';
+        document.getElementById('aft-average-calc').textContent=Aft.toFixed(2)+' In';
+        document.getElementById('draft-mean').textContent=meanDraft.toFixed(2)+' In';
     // Logic Checks
     if(pFwdFt==""||pFwdIn==""||sFwdFt==""||sFwdIn==""||pAftFt==""||pAftIn==""||sAftFt==""||sAftIn==""){
         // label the "div id" as id to check and label based on above.
@@ -146,6 +159,13 @@ function imperialTwoDrafts(){
         if(trim===0){
             document.getElementById('trim').textContent=0;
         }
+// Calculations Page
+        document.getElementById('port-fwd').textContent=Fwd.toFixed(2);
+        document.getElementById('port-aft').textContent=Aft.toFixed(2);
+        document.getElementById('fwd-average-calc').textContent=Fwd.toFixed(2)+' In';
+        document.getElementById('aft-average-calc').textContent=Aft.toFixed(2)+' In';
+        document.getElementById('draft-mean').textContent=meanDraft.toFixed(2)+' In';
+
     // Logic Checks
     if(pFwdFt==""||pFwdIn==""||pAftFt==""||pAftIn==""){
         // label the "div id" as id to check and label based on above.
@@ -175,13 +195,14 @@ function imperialTwoDrafts(){
 function metricFourDrafts(){
     // Variables
     var pFwdMeter = parseFloat(document.getElementById('port-fwd-ft').value) || "";
-    var portFwdMeter=Number(pFwdMeter)||0; 
+    var portFwdMeter=Number(pFwdMeter)||0;
     var pAftMeter = parseFloat(document.getElementById('port-aft-ft').value) || "";
-    var portAftMeter=Number(pAftMeter)||0; 
+    var portAftMeter=Number(pAftMeter)||0;
     var sFwdMeter = parseFloat(document.getElementById('stbd-fwd-ft').value) || "";
-    var stbdFwdMeter=Number(sFwdMeter)||0; 
+    var stbdFwdMeter=Number(sFwdMeter)||0;
     var sAftMeter = parseFloat(document.getElementById('stbd-aft-ft').value) || "";
-    var stbdAftMeter=Number(sAftMeter)||0; 
+    var stbdAftMeter=Number(sAftMeter)||0;
+
     // Calculate f/a
     var fwdMeter=(portFwdMeter+stbdFwdMeter)/2;
     var aftMeter=(portAftMeter+stbdAftMeter)/2;
@@ -203,6 +224,16 @@ function metricFourDrafts(){
             else{
                 document.getElementById('trim').textContent=0;
             }
+//Calculations page
+            document.getElementById('port-fwd').textContent=portFwdMeter; 
+            document.getElementById('port-aft').textContent=portAftMeter;
+            document.getElementById('stbd-fwd').textContent=portFwdMeter;
+            document.getElementById('stbd-aft').textContent=stbdAftMeter;
+            document.getElementById('fwd-average').textContent=fwdMeter.toFixed(2)+' M';
+            document.getElementById('aft-average').textContent=aftMeter.toFixed(2)+' M';
+            document.getElementById('fwd-average-calc').textContent=fwdMeter.toFixed(2)+' M';
+            document.getElementById('aft-average-calc').textContent=aftMeter.toFixed(2)+' M';
+            document.getElementById('draft-mean').textContent=meanDraft.toFixed(2)+' M';
 // Logic Check
 if(pFwdMeter==""||sFwdMeter==""||pAftMeter==""||sAftMeter==""){
         // label the "div id" as id to check and label based on above.
@@ -232,9 +263,10 @@ if(pFwdMeter==""||sFwdMeter==""||pAftMeter==""||sAftMeter==""){
 function metricTwoDrafts(){
 // Variables
     var fMeter = parseFloat(document.getElementById('port-fwd-ft').value) || "";
-    var fwdMeter=Number(fMeter)||0; 
+    var fwdMeter=Number(fMeter)||0;
     var aMeter = parseFloat(document.getElementById('port-aft-ft').value) || "";
     var aftMeter=Number(aMeter)||0; 
+
     // Calculate Mean Draft
     meanDraft=(fwdMeter+aftMeter)/2;
     // Calculate Trim
@@ -253,6 +285,13 @@ function metricTwoDrafts(){
             else{
                 document.getElementById('trim').textContent=0;
             }
+// Calculations Page
+            document.getElementById('port-fwd').textContent=fwdMeter.toFixed(2);
+            document.getElementById('port-aft').textContent=aftMeter.toFixed(2);
+            document.getElementById('fwd-average-calc').textContent=fwdMeter.toFixed(2)+' M';
+            document.getElementById('aft-average-calc').textContent=aftMeter.toFixed(2)+' M';
+            document.getElementById('draft-mean').textContent=meanDraft.toFixed(2)+' M';
+
     // Logic Checks
     if(fMeter==""||aMeter==""){
         // label the "div id" as id to check and label based on above.

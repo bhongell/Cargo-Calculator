@@ -1,0 +1,58 @@
+{
+  "name": "cargo-calculator",
+  "version": "1.0.1",
+  "description": "Cargo calculator to find mean draft and current tonnage.",
+  "keywords": [
+    "tonnage",
+    "draft",
+    "mean",
+    "draft",
+    "current",
+    "tonnage",
+    "salt",
+    "water",
+    "draft",
+    "salinity",
+    "dock",
+    "water",
+    "allowance",
+    "FWA",
+    "fresh",
+    "water",
+    "allowance"
+  ],
+  "homepage": "https://github.com/bhongell/Cargo-Calculator#readme",
+  "bugs": {
+    "url": "https://github.com/bhongell/Cargo-Calculator/issues"
+  },
+  "repository": "https://github.com/bhongell/Cargo-Calculator-AutoUpdater",
+  "publish":{
+    "provider":"github",
+    "repleaseType": "release"
+  },
+  "license": "ISC",
+  "author": "Bryce Hongell",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-deb": "^7.10.2",
+    "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+    "@electron-forge/plugin-fuses": "^7.10.2",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^39.2.7"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.6.2"
+  }
+}

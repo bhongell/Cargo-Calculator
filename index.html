@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="CSS/draftStyle.css">
         <link rel="stylesheet" href="CSS/tonnageStyle.css">
         <link rel="stylesheet" href="CSS/disclaimerStyle.css">
+        <link rel="stylesheet" href="CSS/calculationsStyle.css">
         
 <!-- jQuery -->
     <script src="js/jquery-3.7.1.min.js"></script>
@@ -84,10 +85,111 @@
 <!-- Toggle Section End -->
 <!-- Body Section Start -->
             <div id="main-body" class="page-sub-container">
+                <button class="info" id="info" onclick="openCalculations()">?</button>
                 <div id="draft" class="container"></div>
                 <div id="tonnage" class="container"></div>
             </div>
 <!-- Body section end -->
+ <!-- calculations start -->
+            <div class="calculations-overlay hidden" id="calculations">
+                <div class="calculations">
+                    <button id="exit-button-calculations" class="exit-button-calculation" onclick="closeCalculations()">X</button>
+                    <div class="calculation" id="dwa-calc">
+                        <h3 class="title-container">Dock Water Allowance</h3>
+                        <div class="division">
+                            <div class="center">(1.025 - 
+                                <span id="salinity-calculation"><span>
+                            )
+                            </div>
+                            <div class="divisor"></div>
+                            <div class="center">0.025</div>
+                        </div>
+                        *
+                        <div id="fwa-calculation"></div>
+                        =
+                        <div id="dwa-calculation"></div>
+                    </div>
+                    <div class="calculation" id="mean-draft-calc">
+                        <h3 class="title-container">Drafts</h3>
+                        <div class="grid-calculations">
+                            <div class="grid-item"></div>
+                            <div class="grid-item"></div>
+                            <div class="grid-item grid-title">
+                                <p class="fourDrafts">PORT</p>
+                            </div>
+                            <div class="grid-item"></div>
+                            <div class="grid-item grid-title">
+                                <p class="fourDrafts">STBD</p>
+                            </div>
+                            <div class="grid-item"></div>
+                            <div class="grid-item"></div>
+                            <div class="grid-item"></div>
+                            <div class="grid-item grid-title">FWD</div>
+                            <div class="grid-item">
+                                <div class="fourDrafts">(</div>
+                            </div>
+                            <div class="grid-item">
+                                    <div class="inline-ftin"><span class="draft-calc" id="port-fwd"></span>
+                                        <p class="unit-imperial">In</p>
+                                        <p class="unit-metric">M</p>
+                                    </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="fourDrafts">+</div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="inline fourDrafts">
+                                    <div class="inline-ftin"><span class="draft-calc" id="stbd-fwd"></span>
+                                        <p class="unit-imperial">In</p>
+                                        <p class="unit-metric">M</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="fourDrafts">)</div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="fourDrafts">/2=</div>
+                            </div>
+                            <div class="grid-item" id="fwd-average"></div>
+                            <div class="grid-item">AFT</div>
+                            <div class="grid-item">
+                                <div class="fourDrafts">(</div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="inline">
+                                    <div class="inline-ftin"><span class="draft-calc" id="port-aft"></span>
+                                        <p class="unit-imperial">In</p>
+                                        <p class="unit-metric">M</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="fourDrafts">+</div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="inline fourDrafts">
+                                    <div class="inline-ftin"><span class="draft-calc" id="stbd-aft"></span>
+                                        <p class="unit-imperial">In</p>
+                                        <p class="unit-metric">M</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="fourDrafts">)</div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="fourDrafts">/2=</div>
+                            </div>
+                            <div class="grid-item" id="aft-average"></div>
+                        </div>
+                        <div class="mean-draft-calcs">
+                            <div>(<span id="fwd-average-calc"></span>+<span id="aft-average-calc"></span>)/2=<span id="draft-mean"></span></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+  <!-- Calculation end -->
  <!-- Disclaimer popup Start -->
             <div id="popup-overlay" class="popup-overlay">
                 <div id="popup-content" class="popup-content">
@@ -98,6 +200,7 @@
                     <p class="disclaimer-p">All input fields should be utalized for the respective calculation. Orange error boxes will show if a field has not been fully filled out. Red boxes indicate a critical field which has not been filled out.</p>
                 </div>
                 <!-- disclaimer popup end -->
+
             </div>
         </div>
         <p id="info" class="version"></p>
@@ -124,6 +227,14 @@
         disclaimer.classList.add('hidden');
     }
 });
+    function openCalculations(){
+        const calculations=document.getElementById('calculations');
+        calculations.classList.remove('hidden');
+    }
+        function closeCalculations(){
+        const calculations=document.getElementById('calculations');
+        calculations.classList.add('hidden');
+    }
 // function toggle4Drafts(){
 //     const checkbox=document.getElementById('draft-count');
 //     const isChecked=checkbox.checked;

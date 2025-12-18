@@ -16,6 +16,7 @@ function salinityCheck(){
     salinity=parseFloat(document.getElementById('salinity').value) || "";
     if (salinity >=min && salinity <=max){
         salinity=salinity;
+        document.getElementById('salinity-calculation').textContent=salinity+' )';
     } else {
         document.getElementById('salinity').value="";
         document.getElementById('salinity').classList.add("invalid");
@@ -26,11 +27,13 @@ function salinityCheck(){
 function calculateDWAMetric(){
     // Declare variables
     var fwa=parseFloat(document.getElementById('fwa-ft').value) || "";
+    document.getElementById('fwa-calculation').textContent=fwa;
     salinityCheck();
     // Calculate 
     DWA=(((1.025 - salinity) / 0.025) * fwa) || 0;
     // Print to display and log
     document.getElementById('dwa').textContent=DWA.toFixed(1) + " Cm";
+    document.getElementById('dwa-calculation').textContent=DWA.toFixed(1) + " Cm";
     console.log("DWA",DWA);
 // Logic Checks
     if ((salinity!=""||fwa!="")&&(salinity==""||fwa=="")){
@@ -52,9 +55,11 @@ function calculateDWAImperial(){
     var fwaFt = parseInt(document.getElementById('fwa-ft').value) || 0;
     var fwaIn = parseFloat(document.getElementById('fwa-in').value) || "";
     var fwaInches= (fwaFt*12)+fwaIn || "";
+    document.getElementById('fwa-calculation').textContent = fwaInches + " In";
     salinityCheck();
     // Calculate 
     DWA = (((1.025 - salinity) / 0.025) * fwaInches) || 0;
+    document.getElementById('dwa-calculation').textContent = DWA.toFixed(2)+ ' In';
     // Formatting/printing to display
     var feet = 0, inches = 0;
         if (DWA >= 12) {
